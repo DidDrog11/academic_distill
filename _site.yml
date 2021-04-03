@@ -1,0 +1,15 @@
+name: "academic_distill"
+title: "dsimons.org"
+description: |
+  dsimons.org
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+favicon: images/icon.png
+twitter:
+  site: "@David_Simons_UK"
+output: distill::distill_article
