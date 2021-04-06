@@ -1,0 +1,12 @@
+---
+title: "Antimicrobial Resistance and the poultry industry"
+description: |
+  This is where I list all of my AMR work
+site: distill::distill_website
+date: April 06, 2021
+output:
+    distill::distill_article:
+      toc: true
+---
+
+All of the AMR posts will be listed here as well as individually.

@@ -1,15 +1,33 @@
 name: "academic_distill"
-title: "dsimons.org"
+title: "Home"
 description: |
   dsimons.org
-output_dir: "_site"
+theme: theme.css
 navbar:
+  search: true
   right:
-    - text: "Home"
-      href: index.html
     - text: "About"
       href: about.html
-favicon: images/icon.png
-twitter:
-  site: "@David_Simons_UK"
+    - text: "Projects"
+      menu:
+        - text: "Lassa fever"
+          href: lassa_fever.html
+        - text: "---"
+        - text: "COVID-19"
+          href: covid_19.html
+        - text: "---"
+        - text: "Antimicrobial resistance"
+          href: amr.html
+    - text: "All posts"
+      href: all_posts.html
+    - icon: fab fa-orcid
+      href: "https://orcid.org/0000-0001-9655-1656"
+categories:
+  - Lassa
+  - "COVID-19"
+favicon: images/icon.ico
+creative_commons: CC BY
+alt_formats: true
+output_dir: "_site"
+base_url: "wwww.dsimons.org"
 output: distill::distill_article

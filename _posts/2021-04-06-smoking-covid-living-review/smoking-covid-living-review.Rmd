@@ -1,0 +1,28 @@
+---
+title: "Smoking and COVID-19: Living systematic review"
+description: |
+  An ongoing review and Bayesian meta-analysis of the association of smoking and COVID-19
+date: April 06, 2021
+author:
+  - name: "David Simons"
+    url: https://github.com/diddrog11/smoking_covid_bayes
+    affiliation: The Royal Veterinary College, London, UK
+    affiliation_url: https://www.rvc.ac.uk
+    orcid_id: 0000-0001-9655-1656
+output:
+    distill::distill_article:
+      toc: true
+categories:
+    - "COVID-19"
+bibliography: ref.bib
+---
+
+## Initial report
+
+During the early stages of the SARS-CoV-2 pandemic several physiological characteristics (i.e. male) and medical co-morbidities (i.e. hypertension and cardiovascular) disease were suspected to have an increased association with adverse outcomes. There was little evidence on the effect of smoking or tobacco use [@simons_covid-19_2020]. We performed a rapid review of the evidence at the request of the Royal College of Physicians, London [@simons_smoking_2020]. This work evolved into a living review.
+
+## Living review
+
+We chose to synthesise the evidence through a [Living Systematic Review](https://doi.org/10.1136/bmj.m2925) due to the rapidly evolving information base. Searches were conducted monthly and we published our pre-print manuscripts on [*Qeios*](https://www.qeios.com/teaser). Version 7 [@simons_association_2020] of this work has been published in the journal [*Addiction*](http://onlinelibrary.wiley.com/doi/abs/10.1111/add.15276), further versions have been released as post-prints.
+
+  - [The most recent version will always be found here](https://www.qeios.com/read/latest-UJR2AW)

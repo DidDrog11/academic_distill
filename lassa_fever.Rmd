@@ -1,0 +1,22 @@
+---
+title: "Lassa fever"
+description: |
+  This is where I list all of my Lassa work
+site: distill::distill_website
+date: April 06, 2021
+output:
+    distill::distill_article:
+      toc: true
+bibliography: website_refs.bib
+categories:
+    - Lassa
+---
+
+## *Lassa mammarenavirus* assay development
+
+Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available. To our knowledge there no pan-species antibody assays. To support our ongoing work on understanding the epidemiology and transmission dynamics in multi-species systems in endemic regions we have begun developing a cross-species assay. We adopted an approach that has been found to be successful for *Peste des petits ruminants* a virus that affects goats, sheep and camels and is targeted for eradication. These assays are built on the Luciferase Immunoprecipitation System [@berguido_specific_2016] which detect the presence of antibodies against the presented antigen.
+
+Our work so far in the development of the assay is presented in the following posts:
+
+  - [Identification of potential antigenic epitopes](_posts/2021-04-06-luciferase-immunoprecipitations-system/luciferase-immunoprecipitations-system.html)
+  - [Rodent trapping](_posts/2021-04-06-rodent-trapping-pilot/rodent-trapping-pilot.html)

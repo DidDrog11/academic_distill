@@ -1,0 +1,35 @@
+---
+title: "The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous"
+description: |
+  A case control study performed at a single NHS trust
+date: April 06, 2021
+author:
+  - name: "David Simons"
+    affiliation: The Royal Veterinary College, London, UK
+    affiliation_url: https://www.rvc.ac.uk
+    orcid_id: 0000-0001-9655-1656
+output:
+    distill::distill_article:
+      toc: true
+categories:
+    - "COVID-19"
+bibliography: ref.bib
+---
+
+##    Hospitalised patients case-control study
+
+We performed a case-control study at University College Hospital London NHS Foundation Trust to explore the association of smoking and hospitalisation with COVID-19 compared to other respiratory viruses from the year prior to the pandemic. This work used data extracted from the Electronic Healthcare Records of 657 in-patients. This work has been submitted for peer-review and publication. It is currently registered as a pre-print on medRxiv [@simons_association_2021] the publication is available [here](https://www.medrxiv.org/content/10.1101/2020.11.26.20238469v2).
+
+I presented an interim analysis of this work at the 21st Annual SRNT-E Conference the recorded talk is available below.
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/jflbfUAybo8" title="SRNTe presentation - The association of former and current smoking with hospitalisation for COVID-19" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+###   Abstract
+
+**Background** It is unclear whether smoking increases the risk of COVID-19 hospitalisation. We examined i) the association of smoking status with hospitalisation for COVID-19 compared with hospitalisation for other respiratory viral infections a year previous; and ii) concordance between smoking status recorded on the electronic health record (EHR) and the contemporaneous medical notes.
+
+**Methods** This case-control study enrolled adult patients (446 cases and 211 controls) at a single National Health Service trust in London, UK. The outcome variable was type of hospitalisation (COVID-19 vs. another respiratory virus a year previous). The exposure variable was smoking status (never/former/current smoker). Logistic regression analyses adjusted for age, sex, socioeconomic position and comorbidities were performed. The study protocol and analyses were pre-registered in April 2020 on the Open Science Framework.
+
+**Results** Current smokers had lower odds of being hospitalised with COVID-19 compared with other respiratory viruses a year previous (OR~adj~=0.55, 95% CI=0.31-0.96, *p*=.04). There was no significant association among former smokers (OR~adj~=1.08, 95% CI=0.72-1.65, *p*=.70). Smoking status recorded on the EHR (compared with the contemporaneous medical notes) was incorrectly recorded for 168 (79.6%) controls (χ^2^(3)=256.5, *p*=<0.001) and 60 cases (13.5%) (χ^2^(3)=34.2, *p*=<0.001).
+
+**Conclusions** In a single UK hospital trust, current smokers had reduced odds of being hospitalised with COVID-19 compared with other respiratory viruses a year previous, although it is unclear whether this association is causal. Targeted post-discharge recording of smoking status may account for the greater EHR- medical notes concordance observed in cases compared with controls.
