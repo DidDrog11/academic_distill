@@ -24,15 +24,6 @@
       <media:content url="wwww.dsimons.org/posts/2021-04-06-luciferase-immunoprecipitations-system/images/lips_outline.png" medium="image" type="image/png" width="1280" height="508"/>
     </item>
     <item>
-      <title>The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous</title>
-      <dc:creator>David Simons</dc:creator>
-      <link>wwww.dsimons.org/posts/2021-04-06-smoking-covid-hospitalised</link>
-      <description>A case control study performed at a single NHS trust</description>
-      <category>COVID-19</category>
-      <guid>wwww.dsimons.org/posts/2021-04-06-smoking-covid-hospitalised</guid>
-      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Smoking and COVID-19: Living systematic review</title>
       <dc:creator>David Simons</dc:creator>
       <link>wwww.dsimons.org/posts/2021-04-06-smoking-covid-living-review</link>
@@ -48,6 +39,15 @@
       <description>A report generated from the initial rodent trapping pilot study performed in Lalehun and Seilama, Eastern Sierra Leone.</description>
       <category>Lassa</category>
       <guid>wwww.dsimons.org/posts/2021-04-06-rodent-trapping-pilot</guid>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous</title>
+      <dc:creator>David Simons</dc:creator>
+      <link>wwww.dsimons.org/posts/2021-04-06-smoking-covid-hospitalised</link>
+      <description>A case control study performed at a single NHS trust</description>
+      <category>COVID-19</category>
+      <guid>wwww.dsimons.org/posts/2021-04-06-smoking-covid-hospitalised</guid>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
