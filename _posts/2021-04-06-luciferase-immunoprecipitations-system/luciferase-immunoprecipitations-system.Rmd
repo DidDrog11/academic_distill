@@ -18,9 +18,7 @@ To support our ongoing work on understanding the epidemiology and transmission d
 Figure 1 shows a schematic approach to the LIPS assay
 
 ```{r, layout="l-body-outset", echo=F, fig.cap="LIPS assay CC-BY-NC B. Drame"}
-library(here)
-
-knitr::include_graphics(here("images", "lips_outline.jpg"))
+knitr::include_graphics("images/lips_outline.png")
 ```
 
 ## Identification of potential antigenic epitopes
@@ -29,5 +27,5 @@ A bioinformatic approach was implemented to identify potential antigen epitopes 
 
 
 ```{r, layout="l-body-outset", echo=F, fig.cap="Poster produced for ICREID conference"}
-knitr::include_graphics(here("images", "poster.jpg"))
+knitr::include_graphics("images/poster.png")
 ```

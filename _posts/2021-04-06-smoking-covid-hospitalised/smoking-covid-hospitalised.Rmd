@@ -22,7 +22,8 @@ We performed a case-control study at University College Hospital London NHS Foun
 
 I presented an interim analysis of this work at the 21st Annual SRNT-E Conference the recorded talk is available below.
 
-<iframe width="720" height="405" src="https://www.youtube.com/embed/jflbfUAybo8" title="SRNTe presentation - The association of former and current smoking with hospitalisation for COVID-19" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![SRNTe presentation - The association of former and current smoking with hospitalisation for COVID-19](https://www.youtube.com/embed/jflbfUAybo8)
 
 ###   Abstract
 

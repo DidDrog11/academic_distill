@@ -1,7 +1,7 @@
 name: "academic_distill"
-title: "Home"
+title: "David Simons"
 description: |
-  dsimons.org
+  Zoonoses, Infectious Diseases and Antimicrobial Resistance
 theme: theme.css
 navbar:
   search: true

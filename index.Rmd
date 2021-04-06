@@ -1,14 +1,8 @@
 ---
-title: "Home"
+title: "Zoonoses, Infectious Diseases and Antimicrobial Resistance"
 description: |
   Welcome to my personal website. I have organised my work by themes in the navigation bar
 site: distill::distill_website
-author:
-  - name: "David Simons"
-    url: https://github.com/diddrog11
-    affiliation: The Royal Veterinary College, London, UK
-    affiliation_url: https://www.rvc.ac.uk
-    orcid_id: 0000-0001-9655-1656
 date: April 06, 2021
 output:
     distill::distill_article:

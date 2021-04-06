@@ -18,5 +18,5 @@ Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variabili
 
 Our work so far in the development of the assay is presented in the following posts:
 
-  - [Identification of potential antigenic epitopes](posts/2021-04-06-luciferase-immunoprecipitations-system/luciferase-immunoprecipitations-system.html)
-  - [Rodent trapping](posts/2021-04-06-rodent-trapping-pilot/rodent-trapping-pilot.html)
+  - [Identification of potential antigenic epitopes](posts/2021-04-06-luciferase-immunoprecipitations-system/index.html)
+  - [Rodent trapping](posts/2021-04-06-rodent-trapping-pilot/index.html)

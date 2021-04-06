@@ -32,13 +32,18 @@ An initial report for the trapping activity conducted November-December 2020
 ### Study site selection
 A recent review conducted by Rory Gibb et al. 2017 collated published and unpublished documented Lassa Fever cases (humans) and infections (PCR) or seroprevalence (Ab) (rodents) from countries reporting LASV presence. This data has been used to support study site selection.
 
-![Previously documented Lassa cases in Sierra Leone](images/trapping/lassa_SL.png)
+![Previously documented Lassa cases in Sierra Leone](trapping/lassa_SL.png)
+
+```{r}
+
+```
+
 
 This highlights that most of the documented cases of Lassa Fever in Sierra Leone are found in the East of the country. There is a particularly large cluster around Kenema, the location of the Lassa Fever treatment ward and reference laboratory. There is a slightly smaller cluster to the North and North East of the city around Panguma and Segbwema. recently cases have been detected near Freetown and Bo suggesting a wider distribution. Several projects over the last couple of years, PREDICTS and LAROCS have been conducting larger transect studies across the country which while not formally reported are suggestive of widespread serological evidence of infection in rodents.
 
 My work will be focussed primarily around Panguma, I will set up a "control" site in Kambia and I would also like to set up an additional semi-urban site on the outskirts of either Panguma or Kenema to complement the two rural sites I will describe below.
 
-![Previously documented Lassa cases near Panguma](images/trapping/lassa_panguma.png)
+![Previously documented Lassa cases near Panguma](trapping/lassa_panguma.png)
 The above map highlights human cases and positive rodents in and around Panguma. This in combination with land use maps was used to select the two rural sites. Lalehun lies to the East of Panguma. Seilama lies to the South West. Both are represented by a black diamond.
 
 ### Land use at the study sites
@@ -54,15 +59,15 @@ This land use classification is obtained from a recent paper by [Jung et al. 202
   * Dark green = 1.9 Forest - subtropical-tropical moist montane
   * Mauve = 3.7 Shrubland - subtropical-tropical high altitude
 
-![Lalehun land use map, classified by IUCN categories](images/trapping/lalehun_IUCN.png)
+![Lalehun land use map, classified by IUCN categories](trapping/lalehun_IUCN.png)
 
-![Seilama land use map, classified by IUCN categories](images/trapping/seilama_IUCN.png)
+![Seilama land use map, classified by IUCN categories](trapping/seilama_IUCN.png)
 
 Using the habitat map and discussions with locals we identified sites that would provide use with varied habitats and that would also be able to be repeatedly sampled irrespective of whether the visit was conducted during the rainy season.
 
 ### Lalehun (Village 1) trap grid locations
 
-![](/media/rodent_report_fig//lalehun_traps.png)
+![](trapping/lalehun_traps.png)
 The base map used here is from Google maps and so is unfortunately not entirely up-to-date. 
 
 The habitats of the trap grids are as follows:
@@ -79,7 +84,7 @@ The specific location of each individual trap was also recorded (e.g. edge envir
 
 ### Seilama (Village 1) trap grid locations
 
-![](/media/rodent_report_fig/seilama_traps.png)
+![](trapping/seilama_traps.png)
 The habitats of the trap grids are as follows:
 
  * 1 - Palm plantation, near the village and main road
@@ -99,11 +104,11 @@ The code to produce the maps of trap location is in `scripts/geolocation_traps.R
 
 Lalehun was visited first, it took a couple of days to get up and running properly there so less trap nights were completed. 726 from Lalehun compared to 1120 from Seilama.
 
-![](images/trapping/proportion_trap_nights.png)
+![](trapping/proportion_trap_nights.png)
 
 During this visit no traps were set in houses, this will change for future visits.
 
-![](images/trapping/number_trap_nights.png)
+![](trapping/number_trap_nights.png)
 
 We arrived late in Lalehun on the first day and were only able to set up one site, two further sites were set the next day with the final two up by the 2nd of December. We were more efficient by the time we got to Seilama with all but the village site set up on the first day. We were thus able to complete 4 nights of trapping at each site in Seilama.
 
@@ -111,11 +116,11 @@ We arrived late in Lalehun on the first day and were only able to set up one sit
 
 We recorded the presence or absence of rodent bait the next morning, along with whether the trap was found to be sprung closed (i.e. it had been disturbed overnight or it had been triggered by a rodent but it had not successfully trapped it).
 
-![](images/trapping/traps_baits.png)
+![](trapping/traps_baits.png)
 
 There appears to be a decrease in removal of bait from the traps in subsequent nights
 
-![](images/trapping/proportion_rodents.png)
+![](trapping/proportion_rodents.png)
 
 65 Rodents were trapped during the pilot study:
 
@@ -128,25 +133,25 @@ No rodents were trapped in the distal agriculture or forested habitats at Lalehu
 
 48 (74%) of the trapped species belong to the family Muridae, the remaining 17 (26%) were shrews (family Soricidae). 
 
-![](images/trapping/genera.png)
+![](trapping/genera.png)
 
 The shrews (genera *Crocidura*) form the highest proportion of individuals. *Praomys* and *Lophuromys* were the most abundant Muridae genera. *Praomys* was not detected in Lalehun with *Lophuromys* being detected at both study sites. *Mus* and *Lemniscomys* were the only other Muridae caught in Lalehun. 6 additional genera of Muridae were trapped in Seilama above those caught in Lalehun.
 
-![](images/trapping/habitat_rodents.png)
+![](trapping/habitats_rodent.png)
 
 This shouldn't be over interpreted at the moment as more data will be needed but there is expected to be a difference in the habitat preferences of different species. This can also be looked at over time/seasonality.
 
-![](images/trapping/trapped_shrews.png)
+![](trapping/trapped_shrews.png)
 
 Shrews were trapped in most locations but not within the forested/fallow areas.
 
 ### Diversity
 
-![](images/trapping/genus_richness.png)
+![](trapping/genus_richness.png)
 
 Richness was similar across all sites in Seilama, less so in Lalehun but likely related to the reduced trap nights obtained there.
 
-![](images/trapping/individual_abundance.png)
+![](trapping/individual_abundance.png)
 
 There was some degree of increased abundance in the agricultural and fallow sites in Seilama compared to the village site. No rodents were trapped in site 4 and 5 in Lalehun so makes any comparisons slightly harder.
 
