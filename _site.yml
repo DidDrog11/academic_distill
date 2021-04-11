@@ -6,7 +6,7 @@ theme: theme.css
 navbar:
   search: true
   right:
-    - text: "About"
+    - text: "About me"
       href: about.html
     - text: "Projects"
       menu:

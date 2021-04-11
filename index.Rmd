@@ -1,7 +1,7 @@
 ---
 title: "Zoonoses, Infectious Diseases and Antimicrobial Resistance"
 description: |
-  Welcome to my personal website. I have organised my work by themes in the navigation bar
+  Welcome to my personal website. I have organised my work by themes in the project dropdown menu in the navigation bar. I will post in progress work to this page alongside completed work. In progress work will be labelled as such.
 site: distill::distill_website
 date: April 06, 2021
 output:

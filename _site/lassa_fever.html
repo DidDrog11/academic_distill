@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -1869,7 +1869,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2382,7 +2385,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="about.html">About</a>
+<a href="about.html">About me</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Projects
@@ -2426,6 +2429,11 @@ Projects
 <h3>Contents</h3>
 <ul>
 <li><a href="#lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</a></li>
+<li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</a>
+<ul>
+<li><a href="#in-progress"><strong>In progress</strong></a></li>
+</ul></li>
+<li><a href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</a></li>
 </ul>
 </nav>
 </div>
@@ -2434,6 +2442,15 @@ Projects
 <p>Our work so far in the development of the assay is presented in the following posts:</p>
 <ul>
 <li><a href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification of potential antigenic epitopes</a></li>
+</ul>
+<h2 id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</h2>
+<h3 id="in-progress"><strong>In progress</strong></h3>
+<p>I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.</p>
+<ul>
+<li><a href="posts/scoping-review/index.html">Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review</a></li>
+</ul>
+<h2 id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</h2>
+<ul>
 <li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent trapping</a></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

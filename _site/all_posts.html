@@ -2464,6 +2464,7 @@ function init_posts_list() {
 
       // mark posts that match the category visible
       var page_category = window.location.hash.replace(/^#category:/, "");
+      page_category = decodeURIComponent(page_category)
       var posts = $('.post-metadata').map(function(idx, script) {
         var metadata = $.parseJSON($(script).html());
         var post = null;
@@ -2479,7 +2480,7 @@ function init_posts_list() {
       set_posts_visible(posts, true);
 
       // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
 
       // update the list_caption
       var list_caption = $('.posts-list-caption');
@@ -2542,6 +2543,23 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="All posts">All posts</h1>
+<a href="posts/scoping-review/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">April 10, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">David Simons</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/scoping-review/distill-preview.png"/>
+</div>
+<div class="description">
+<h2>Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review</h2>
+<div class="dt-tags"></div>
+<p></p>
+</div>
+</a>
 <a href="posts/2021-04-06-luciferase-immunoprecipitations-system/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["Lassa"]}</script>
 <div class="metadata">
@@ -2602,12 +2620,14 @@ function init_posts_list() {
 <a href="posts/2021-04-06-smoking-covid-hospitalised/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["COVID-19"]}</script>
 <div class="metadata">
-<div class="publishedDate">April 5, 2021</div>
+<div class="publishedDate">April 6, 2021</div>
 <div class="dt-authors">
 <div class="dt-author">David Simons</div>
 </div>
 </div>
-<div class="thumbnail"></div>
+<div class="thumbnail">
+<img/>
+</div>
 <div class="description">
 <h2>The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous</h2>
 <div class="dt-tags">
@@ -2623,7 +2643,7 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(4)</span>
+<span class="category-count">(5)</span>
 </li>
 <li>
 <a href="#category:COVID-19">COVID-19</a>
@@ -2640,7 +2660,7 @@ function init_posts_list() {
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>All posts</h1>
