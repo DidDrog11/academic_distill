@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="wwww.dsimons.org/all_posts.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -89,32 +88,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>David Simons: All posts</title>
 
-  <meta property="description" itemprop="description" content="This lists all of the individual posts"/>
 
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
   <link rel="icon" type="image/vnd.microsoft.icon" href="images/icon.ico"/>
 
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-04-06"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-04-06"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="David Simons: All posts"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This lists all of the individual posts"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="David Simons"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="David Simons: All posts"/>
-  <meta property="twitter:description" content="This lists all of the individual posts"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","date","output","listing","categories"]}},"value":[{"type":"character","attributes":{},"value":["All posts"]},{"type":"character","attributes":{},"value":["This lists all of the individual posts\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["April 06, 2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["posts"]},{"type":"character","attributes":{},"value":["lassa","covid","amr"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing","categories"]}},"value":[{"type":"character","attributes":{},"value":["All posts"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2021-04-06-smoking-covid-living-review","2021-04-06-smoking-covid-hospitalised","2021-04-06-rodent-trapping-pilot","2021-04-06-luciferase-immunoprecipitations-system","scoping-review"]}]},{"type":"character","attributes":{},"value":["lassa","covid","amr"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2369,7 +2362,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"All posts","description":"This lists all of the individual posts","authors":[],"publishedDate":"2021-04-06T00:00:00.000+01:00"}
+{"title":"All posts","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2381,7 +2374,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="about.html">About</a>
+<a href="about.html">About me</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Projects
@@ -2464,7 +2457,6 @@ function init_posts_list() {
 
       // mark posts that match the category visible
       var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
       var posts = $('.post-metadata').map(function(idx, script) {
         var metadata = $.parseJSON($(script).html());
         var post = null;
@@ -2480,7 +2472,7 @@ function init_posts_list() {
       set_posts_visible(posts, true);
 
       // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
 
       // update the list_caption
       var list_caption = $('.posts-list-caption');
@@ -2543,42 +2535,6 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="All posts">All posts</h1>
-<a href="posts/scoping-review/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">April 10, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">David Simons</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/scoping-review/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review</h2>
-<div class="dt-tags"></div>
-<p></p>
-</div>
-</a>
-<a href="posts/2021-04-06-luciferase-immunoprecipitations-system/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Lassa"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 6, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">David Simons</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-04-06-luciferase-immunoprecipitations-system/images/lips_outline.png"/>
-</div>
-<div class="description">
-<h2>Luciferase Immunoprecipitations System</h2>
-<div class="dt-tags">
-<div class="dt-tag">Lassa</div>
-</div>
-<p>An introduction to the work performed developing the Lassa LIPS assay.</p>
-</div>
-</a>
 <a href="posts/2021-04-06-smoking-covid-living-review/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["COVID-19"]}</script>
 <div class="metadata">
@@ -2596,6 +2552,25 @@ function init_posts_list() {
 <div class="dt-tag">COVID-19</div>
 </div>
 <p>An ongoing review and Bayesian meta-analysis of the association of smoking and COVID-19</p>
+</div>
+</a>
+<a href="posts/2021-04-06-smoking-covid-hospitalised/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["COVID-19"]}</script>
+<div class="metadata">
+<div class="publishedDate">April 6, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">David Simons</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous</h2>
+<div class="dt-tags">
+<div class="dt-tag">COVID-19</div>
+</div>
+<p>A case control study performed at a single NHS trust</p>
 </div>
 </a>
 <a href="posts/2021-04-06-rodent-trapping-pilot/" class="post-preview">
@@ -2617,8 +2592,8 @@ function init_posts_list() {
 <p>A report generated from the initial rodent trapping pilot study performed in Lalehun and Seilama, Eastern Sierra Leone.</p>
 </div>
 </a>
-<a href="posts/2021-04-06-smoking-covid-hospitalised/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["COVID-19"]}</script>
+<a href="posts/2021-04-06-luciferase-immunoprecipitations-system/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["Lassa"]}</script>
 <div class="metadata">
 <div class="publishedDate">April 6, 2021</div>
 <div class="dt-authors">
@@ -2626,14 +2601,31 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img/>
+<img src="posts/2021-04-06-luciferase-immunoprecipitations-system/images/lips_outline.png"/>
 </div>
 <div class="description">
-<h2>The association of smoking status with hospitalisation for COVID-19 compared with other respiratory viruses a year previous</h2>
+<h2>Luciferase Immunoprecipitations System</h2>
 <div class="dt-tags">
-<div class="dt-tag">COVID-19</div>
+<div class="dt-tag">Lassa</div>
 </div>
-<p>A case control study performed at a single NHS trust</p>
+<p>An introduction to the work performed developing the Lassa LIPS assay.</p>
+</div>
+</a>
+<a href="posts/scoping-review/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">April 11, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">David Simons</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/scoping-review/distill-preview.png"/>
+</div>
+<div class="description">
+<h2>Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review</h2>
+<div class="dt-tags"></div>
+<p></p>
 </div>
 </a>
 </div>
@@ -2660,7 +2652,7 @@ function init_posts_list() {
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>All posts</h1>
@@ -2671,7 +2663,7 @@ function init_posts_list() {
 <div class="dt=tag">amr</div>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>This lists all of the individual posts</p></p>
+
 </div>
 
 

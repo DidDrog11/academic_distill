@@ -28,8 +28,8 @@ Current and former smoking is associated with worse outcomes and increased rates
 
 Early data released from healthcare services in China in the early parts of 2020 suggested that smoking was not a significant risk factor for COVID-19 disease. Whether this was a true effect or reflected poor recording or reporting was unclear. We began to synthesise the published and pre-print literature to investigate the specific association of smoking and COVID-19. This was initially performed as a report for the Royal College of Physicians, London and was expanded following a request from Public Health England.
 
-  - [COVID-19 and smoking living evidence review](posts/2021-04-06-smoking-covid-living-review/index.html)
-  - [The association of smoking status with hospitalisation for COVID-19](posts/2021-04-06-smoking-covid-hospitalised/index.html)
+  - [COVID-19 and smoking living evidence review](_posts/2021-04-06-smoking-covid-living-review/index.html)
+  - [The association of smoking status with hospitalisation for COVID-19](_posts/2021-04-06-smoking-covid-hospitalised/index.html)
 
 ```{r, layout="l-body", echo=F, fig.cap="Quit for COVID", }
 library(here)

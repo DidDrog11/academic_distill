@@ -1887,10 +1887,7 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refs = $(this).attr('data-cites').split(" ");
-      var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
-      }).join("\n");
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2434,9 +2431,6 @@ Projects
 <div class="d-title">
 <h1>Smoking and COVID-19: Living systematic review</h1>
 <!--radix_placeholder_categories-->
-<div class="dt-tags">
-  <a href="../../all_posts.html#category:COVID-19" class="dt-tag">COVID-19</a>
-</div>
 <!--/radix_placeholder_categories-->
 <p><p>An ongoing review and Bayesian meta-analysis of the association of smoking and COVID-19</p></p>
 </div>

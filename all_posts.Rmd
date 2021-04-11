@@ -1,13 +1,13 @@
 ---
 title: "All posts"
-description: |
-  This lists all of the individual posts
 site: distill::distill_website
-date: April 06, 2021
-output:
-    distill::distill_article:
-      toc: true
-listing: posts
+listing:
+  posts:
+    - 2021-04-06-smoking-covid-living-review
+    - 2021-04-06-smoking-covid-hospitalised
+    - 2021-04-06-rodent-trapping-pilot
+    - 2021-04-06-luciferase-immunoprecipitations-system
+    - scoping-review
 categories:
     - lassa
     - covid
