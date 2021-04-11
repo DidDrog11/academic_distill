@@ -20,7 +20,7 @@ Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variabili
 
 Our work so far in the development of the assay is presented in the following posts:
 
-  - [Identification of potential antigenic epitopes](_posts/2021-04-06-luciferase-immunoprecipitations-system/index.html)
+  - [Identification of potential antigenic epitopes](posts/2021-04-06-luciferase-immunoprecipitations-system/index.html)
   
 ## Rodent ecology and zoonoses studies in West Africa
 
@@ -28,7 +28,7 @@ Our work so far in the development of the assay is presented in the following po
 
 I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.
 
-  - [Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review](_posts/scoping-review/index.html)
+  - [Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review](posts/scoping-review/index.html)
 
 ## Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone
 
@@ -36,4 +36,4 @@ I am in the process of conducting a scoping review to consolidate prior research
 
 A pilot study has been performed to inform a planned 2 year programme of repeat trapping in several settings in Sierra Leone. The pilot study is being presented at the [Planetary Health Annual Meeting](https://www.planetaryhealthannualmeeting.com/). For which I am producing a poster and accompanying video that will be linked here when ready. The initial report is available below.
 
-  - [Rodent trapping](_posts/2021-04-06-rodent-trapping-pilot/index.html)
+  - [Rodent trapping](posts/2021-04-06-rodent-trapping-pilot/index.html)
