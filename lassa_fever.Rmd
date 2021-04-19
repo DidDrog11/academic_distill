@@ -36,4 +36,4 @@ I am in the process of conducting a scoping review to consolidate prior research
 
 A pilot study has been performed to inform a planned 2 year programme of repeat trapping in several settings in Sierra Leone. The pilot study is being presented at the [Planetary Health Annual Meeting](https://www.planetaryhealthannualmeeting.com/). For which I am producing a poster and accompanying video that will be linked here when ready. The initial report is available below.
 
-  - [Rodent trapping](posts/2021-04-06-rodent-trapping-pilot/index.html)
+  - [Rodent trapping pilot study](posts/2021-04-06-rodent-trapping-pilot/index.html)
