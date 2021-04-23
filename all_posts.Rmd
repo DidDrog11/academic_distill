@@ -5,7 +5,7 @@ listing:
   posts:
     - 2021-04-06-smoking-covid-living-review
     - 2021-04-06-smoking-covid-hospitalised
-    - 2021-04-06-rodent-trapping-pilot
+    - 2021-04-23-rodent-trapping-pilot
     - 2021-04-06-luciferase-immunoprecipitations-system
     - scoping-review
 categories:
