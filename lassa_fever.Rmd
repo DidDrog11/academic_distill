@@ -44,3 +44,9 @@ A pilot study has been performed to inform a planned 2 year programme of repeat 
   - [Short video introducing the work](https://www.youtube.com/watch?v=5CSVF45rn9Q&t=1s)
 
 Data collection for the longitudinal study began in April 2021
+
+## The niche of One Health approaches in Lassa fever surveillance and control [@arruda2021niche]
+
+Lassa fever (LF), a zoonotic illness, represents a public health burden in West African countries where the Lassa virus (LASV) circulates among rodents. Human exposure hinges significantly on LASV ecology, which is in turn shaped by various parameters such as weather seasonality and even virus and rodent-host genetics. Furthermore, human behaviour, despite playing a key role in the zoonotic nature of the disease, critically affects either the spread or control of human-to-human transmission. Previous estimations on LF burden date from the 80s and it is unclear how the population expansion and the improvement on diagnostics and surveillance methods have affected such predictions. Although recent data have contributed to the awareness of epidemics, the real impact of LF in West African communities will only be possible with the intensification of interdisciplinary efforts in research and public health approaches. This review discusses the causes and consequences of LF from a One Health perspective, and how the application of this concept can improve the surveillance and control of this disease in West Africa.
+
+  - [Link to publication](https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0)
