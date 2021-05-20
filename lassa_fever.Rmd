@@ -31,7 +31,7 @@ Our work so far in the development of the assay is presented in the following po
 
 I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.
 
-  - [Associations of environmental and human factors with altered rodent populations in West Africa: A scoping review](posts/scoping-review/index.html)
+  - [Rodent trapping to explore rodent ecology and zoonotic disease risk: A scoping review](posts/scoping-review/index.html)
 
 ## Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone
 
