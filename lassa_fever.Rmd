@@ -3,7 +3,7 @@ title: "Lassa fever"
 description: |
   This is where I list all of my Lassa work
 site: distill::distill_website
-date: April 06, 2021
+date: July 30, 2021
 output:
     distill::distill_article:
       toc: true
@@ -32,6 +32,9 @@ Our work so far in the development of the assay is presented in the following po
 I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.
 
   - [Rodent trapping to explore rodent ecology and zoonotic disease risk: A scoping review](posts/scoping-review/index.html)
+  - A [poster](images/EEID_poster.pdf) was produced for the [Ecology and Evolution of Infectious Diseases](https://www.eeidconference2021.org/)  conference.
+  
+I have summarised the data from studies identified for this review and made it explorable through an RShiny application. The app is currently a work in progress but is available [here](https://diddrog11.shinyapps.io/scoping_review_app/) if you have any comments on the app or would be interested in seeing the data explored slightly differently please don't hesitate to contact me.
 
 ## Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone
 
