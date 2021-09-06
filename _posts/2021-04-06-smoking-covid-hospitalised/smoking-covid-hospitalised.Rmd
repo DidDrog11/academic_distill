@@ -18,7 +18,9 @@ bibliography: ref.bib
 
 ##    Hospitalised patients case-control study
 
-We performed a case-control study at University College Hospital London NHS Foundation Trust to explore the association of smoking and hospitalisation with COVID-19 compared to other respiratory viruses from the year prior to the pandemic. This work used data extracted from the Electronic Healthcare Records of 657 in-patients. This work has been submitted for peer-review and publication. It is currently registered as a pre-print on medRxiv [@simons_association_2021] the publication is available [here](https://www.medrxiv.org/content/10.1101/2020.11.26.20238469v2).
+We performed a case-control study at University College Hospital London NHS Foundation Trust to explore the association of smoking and hospitalisation with COVID-19 compared to other respiratory viruses from the year prior to the pandemic. This work used data extracted from the Electronic Healthcare Records of 657 in-patients. This work has been submitted for peer-review and publication. It is currently registered as a pre-print on medRxiv [@simons_association_2021] the pre-print is available [here](https://www.medrxiv.org/content/10.1101/2020.11.26.20238469v2).
+
+This article has now been published with *F1000* [@simons_association_2_2021] and is available [here](https://doi.org/10.12688/f1000research.55502.1).
 
 I presented an interim analysis of this work at the 21st Annual SRNT-E Conference the recorded talk is available below.
 
