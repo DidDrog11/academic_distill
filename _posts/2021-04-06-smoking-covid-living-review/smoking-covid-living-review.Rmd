@@ -25,4 +25,6 @@ During the early stages of the SARS-CoV-2 pandemic several physiological charact
 
 We chose to synthesise the evidence through a [Living Systematic Review](https://doi.org/10.1136/bmj.m2925) due to the rapidly evolving information base. Searches were conducted monthly and we published our pre-print manuscripts on [*Qeios*](https://www.qeios.com/teaser). Version 7 [@simons_association_2020] of this work has been published in the journal [*Addiction*](http://onlinelibrary.wiley.com/doi/abs/10.1111/add.15276), further versions have been released as post-prints.
 
+We published version 12 of this review in August 2021. We currently have no plans to continue updating the review, however, if further important studies are release that change the evidence base we may produce another report.
+
   - [The most recent version will always be found here](https://www.qeios.com/read/latest-UJR2AW)

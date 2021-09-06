@@ -1,7 +1,7 @@
 ---
 title: "Lassa fever"
 description: |
-  This is where I list all of my Lassa work
+  This is where I list all of my work on Lassa fever
 site: distill::distill_website
 date: July 30, 2021
 output:
