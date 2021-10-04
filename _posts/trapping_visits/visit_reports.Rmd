@@ -1,7 +1,7 @@
 ---
 title: "Visit Reports"
 description: |
-  This report will clean and perform initial descriptives for the repeat longitudinal study visits.
+  This reports on the progress of the rodent trapping study visits.
 author:
   - name: "David Simons"
     url: https://github.com/diddrog11/rodent_trapping
@@ -14,7 +14,7 @@ output:
     self_contained: false
     toc: true
 categories:
-  - Lassa
+  - "Lassa"
 ---
 
 ```{r setup, include=FALSE, quietly=TRUE}

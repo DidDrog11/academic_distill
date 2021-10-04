@@ -7,7 +7,7 @@ listing:
     - 2021-04-06-smoking-covid-hospitalised
     - 2021-04-23-rodent-trapping-pilot
     - 2021-04-06-luciferase-immunoprecipitations-system
-    - 2021-10-04-rodent-trapping-visit3
+    - trapping_visits
     - scoping-review
 categories:
     - lassa

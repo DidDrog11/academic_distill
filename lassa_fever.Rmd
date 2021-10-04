@@ -9,10 +9,10 @@ output:
       toc: true
 bibliography: website_refs.bib
 categories:
-    - Lassa
-    - One health
-    - Ecology
-    - Zoonoses
+    - "Lassa"
+    - "One health"
+    - "Ecology"
+    - "Zoonoses"
 ---
 
 ## *Lassa mammarenavirus* assay development
