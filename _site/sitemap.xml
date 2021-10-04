@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>wwww.dsimons.org/about.html</loc>
-    <lastmod>2021-09-06T13:40:21+02:00</lastmod>
+    <lastmod>2021-09-06T12:40:21+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/all_posts.html</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-10-04T16:37:49+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/amr.html</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/covid_19.html</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/lassa_fever.html</loc>
-    <lastmod>2021-09-06T13:35:24+02:00</lastmod>
+    <lastmod>2021-10-04T17:59:05+01:00</lastmod>
+  </url>
+  <url>
+    <loc>wwww.dsimons.org/posts/trapping_visits/</loc>
+    <lastmod>2021-10-04T17:57:43+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/posts/scoping-review/</loc>
-    <lastmod>2021-06-14T10:49:10+02:00</lastmod>
+    <lastmod>2021-06-14T09:49:10+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/posts/2021-04-06-rodent-trapping-pilot/</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/posts/2021-04-06-luciferase-immunoprecipitations-system/</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/posts/2021-04-06-smoking-covid-hospitalised/</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
   <url>
     <loc>wwww.dsimons.org/posts/2021-04-06-smoking-covid-living-review/</loc>
-    <lastmod>2021-05-02T22:32:26+02:00</lastmod>
+    <lastmod>2021-05-02T21:32:26+01:00</lastmod>
   </url>
 </urlset>

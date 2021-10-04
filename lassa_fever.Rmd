@@ -44,7 +44,7 @@ A pilot study has been performed to inform a planned 2 year programme of repeat 
 
   - [Study protocol archived on the Open Science Framework](https://osf.io/usjrd/)
   - [Rodent trapping pilot (November-December 2020)](posts/2021-04-06-rodent-trapping-pilot/index.html)
-  - [Rodent trapping visit reports (Visit 1 to 3)](posts/2021-10-04-rodent-trapping-visit3/visit_reports.html)
+  - [Rodent trapping visit reports (Visit 1 to 3)](posts/trapping_visits/index.html)
   - [Poster presented at PHAM 2021](images/PHA_poster.pdf)
   - [Short video introducing the work](https://www.youtube.com/watch?v=5CSVF45rn9Q&t=1s)
 
