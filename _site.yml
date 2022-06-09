@@ -16,6 +16,9 @@ navbar:
         - text: "COVID-19"
           href: covid_19.html
         - text: "---"
+        - text: "Monkeypox"
+          href: monkeypox.html
+        - test: "---"
         - text: "Antimicrobial resistance"
           href: amr.html
     - text: "All posts"

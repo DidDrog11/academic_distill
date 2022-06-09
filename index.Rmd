@@ -14,13 +14,16 @@ bibliography: website_refs.bib
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-My work is organised into three themes:
+You can read a bit more about me and the winding route I have taken towards getting involved in academic research [here](about.html).
+
+My work is organised into four themes:
 
   1. Lassa fever, including assay development, epidemiology and rodent ecology
-  2. Research on COVID-19, specifically the interaction between cigarette smoking and SARS-CoV-2/COVID-19 infection, severity and mortality
-  3. A one health approach to antimicrobial resistance particularly within the poultry industry
+  2. Research on COVID-19, specifically the interaction between cigarette smoking and SARS-CoV-2/COVID-19 infection, severity and mortality. In my role with the Outbreak Surveillance Team (OST) at the UK Health Security Agency I have been involved in several pieces of work focussed on the Omicron variant.
+  3.During the ongoing (March - Ongoing 2022) international outbreak of Monkeypox within PANDORA we spent some time thinking about current research gaps and what may be helpful to focus on in the future. In my role with OST I have been involved in describing the epidemiology of the emerging outbreak.
+  4. A one health approach to antimicrobial resistance particularly within the poultry industry
   
-I have recentyl completed my PhD upgrading process, the report I produced for this is available [here](posts/2021-10-19-upgradedocument/index.html)
+I have recently completed my PhD upgrading process, the report I produced for this is available [here](posts/2021-10-19-upgradedocument/index.html).
 
 # [Lassa fever](lassa_fever.html)
 ```{r, child="lassa_fever.Rmd"}
@@ -28,6 +31,10 @@ I have recentyl completed my PhD upgrading process, the report I produced for th
 
 # [COVID-19](covid_19.html)
 ```{r, child="covid_19.Rmd"}
+```
+
+# [Monkeypox](monkeypox.html)
+```{r, child="monkeypox.Rmd"}
 ```
 
 # [AMR and Chickens](amr.html)

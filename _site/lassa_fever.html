@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,12 +77,34 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -1870,7 +1892,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2351,7 +2376,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2371,7 +2396,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Lassa fever","description":"This is where I list all of my work on Lassa fever","authors":[],"publishedDate":"2021-07-30T00:00:00.000+00:00"}
+{"title":"Lassa fever","description":"This is where I list all of my work on Lassa fever","authors":[],"publishedDate":"2021-07-30T00:00:00.000-04:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2395,6 +2420,8 @@ Projects
 <hr/>
 <a href="covid_19.html">COVID-19</a>
 <hr/>
+<a href="monkeypox.html">Monkeypox</a>
+<span class="nav-dropdown-header"></span>
 <a href="amr.html">Antimicrobial resistance</a>
 </div>
 </div>
@@ -2429,51 +2456,159 @@ Projects
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</a></li>
-<li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</a></li>
-<li><a href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</a></li>
-<li><a href="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">(<span>Arruda et al. 2021</span>)</span></a></li>
+<li><a href="#lassa-mammarenavirus-assay-development"><em>Lassa
+mammarenavirus</em> assay development</a></li>
+<li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent
+ecology and zoonoses studies in West Africa</a></li>
+<li><a
+href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent
+trapping to inform a dynamic rodent assemblage and population model in
+Eastern Sierra Leone</a>
+<ul>
+<li><a href="#pilot-work">Pilot work</a></li>
+<li><a href="#interim-analyses">Interim analyses</a></li>
+<li><a
+href="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The
+niche of One Health approaches in Lassa fever surveillance and control
+<span class="citation" data-cites="arruda2021niche">(<span>Arruda et al.
+2021</span>)</span></a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</h2>
+<h2 id="lassa-mammarenavirus-assay-development"><em>Lassa
+mammarenavirus</em> assay development</h2>
 <p><strong>In progress</strong></p>
-<p>Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available. To our knowledge there no pan-species antibody assays. To support our ongoing work on understanding the epidemiology and transmission dynamics in multi-species systems in endemic regions we have begun developing a cross-species assay. We adopted an approach that has been found to be successful for <em>Peste des petits ruminants</em> a virus that affects goats, sheep and camels and is targeted for eradication. These assays are built on the Luciferase Immunoprecipitation System <span class="citation" data-cites="berguido_specific_2016">(<a href="#ref-berguido_specific_2016" role="doc-biblioref">Berguido et al. 2016</a>)</span> which detect the presence of antibodies against the presented antigen.</p>
-<p>Our work so far in the development of the assay is presented in the following posts:</p>
+<p>Diagnostics for Lassa mammarenavirus (LASV) are challenging due to
+the variability in viral sequence and structure. Several commercial PCR
+and antibody kits are available. To our knowledge there no pan-species
+antibody assays. To support our ongoing work on understanding the
+epidemiology and transmission dynamics in multi-species systems in
+endemic regions we have begun developing a cross-species assay. We
+adopted an approach that has been found to be successful for <em>Peste
+des petits ruminants</em> a virus that affects goats, sheep and camels
+and is targeted for eradication. These assays are built on the
+Luciferase Immunoprecipitation System <span class="citation"
+data-cites="berguido_specific_2016">(<a
+href="#ref-berguido_specific_2016" role="doc-biblioref">Berguido et al.
+2016</a>)</span> which detect the presence of antibodies against the
+presented antigen.</p>
+<p>Our work so far in the development of the assay is presented in the
+following posts:</p>
 <ul>
-<li><a href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification of potential antigenic epitopes</a></li>
+<li><a
+href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification
+of potential antigenic epitopes</a></li>
 </ul>
-<h2 id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</h2>
+<h2 id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent
+ecology and zoonoses studies in West Africa</h2>
 <p><strong>In progress</strong></p>
-<p>I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.</p>
+<p>I am in the process of conducting a scoping review to consolidate
+prior research that has involved the trapping of individual rodents in
+the WHO West Africa region. I have made my initial results available
+below. I will continue to develop this and produce a data resource to
+accompany this work.</p>
 <ul>
-<li><a href="posts/scoping-review/index.html">Rodent trapping to explore rodent ecology and zoonotic disease risk: A scoping review</a></li>
-<li>A <a href="images/EEID_poster.pdf">poster</a> was produced for the <a href="https://www.eeidconference2021.org/">Ecology and Evolution of Infectious Diseases</a> conference.</li>
+<li><a href="posts/scoping-review/index.html">Rodent trapping to explore
+rodent ecology and zoonotic disease risk: A scoping review</a></li>
+<li>A <a href="images/EEID_poster.pdf">poster</a> was produced for the
+<a href="https://www.eeidconference2021.org/">Ecology and Evolution of
+Infectious Diseases</a> conference.</li>
 </ul>
-<p>I have summarised the data from studies identified for this review and made it explorable through an RShiny application. The app is currently a work in progress but is available <a href="https://diddrog11.shinyapps.io/scoping_review_app/">here</a> if you have any comments on the app or would be interested in seeing the data explored slightly differently please don’t hesitate to contact me.</p>
-<h2 id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</h2>
+<p>This work has evolved from primarily descriptive towards focussing
+more on example species following feedback from my supervisors. The
+current version of the in progress, working manuscript is available <a
+href="images/manuscript_v4.pdf">here</a>.</p>
+<p>I have summarised the data from studies identified for this review
+and made it explorable through an RShiny application. The app is
+currently a work in progress but is available <a
+href="https://diddrog11.shinyapps.io/scoping_review_app/">here</a> if
+you have any comments on the app or would be interested in seeing the
+data explored slightly differently please don’t hesitate to contact
+me.</p>
+<h2
+id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent
+trapping to inform a dynamic rodent assemblage and population model in
+Eastern Sierra Leone</h2>
 <p><strong>Ongoing work</strong></p>
-<p>A pilot study has been performed to inform a planned 2 year programme of repeat trapping in several settings in Sierra Leone. This pilot study was presented as a poster at the <a href="https://www.planetaryhealthannualmeeting.com/">Planetary Health Annual Meeting</a>.</p>
+<h3 id="pilot-work">Pilot work</h3>
+<p>A pilot study has been performed to inform a planned 2 year programme
+of repeat trapping in several settings in Sierra Leone. This pilot study
+was presented as a poster at the <a
+href="https://www.planetaryhealthannualmeeting.com/">Planetary Health
+Annual Meeting</a>.</p>
 <ul>
-<li><a href="https://osf.io/usjrd/">Study protocol archived on the Open Science Framework</a></li>
-<li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent trapping pilot (November-December 2020)</a></li>
-<li><a href="posts/trapping_visits/index.html">Rodent trapping visit reports (Visit 1 to 3)</a></li>
-<li><a href="images/PHA_poster.pdf">Poster presented at PHAM 2021</a></li>
-<li><a href="https://www.youtube.com/watch?v=5CSVF45rn9Q&amp;t=1s">Short video introducing the work</a></li>
+<li><a href="https://osf.io/usjrd/">Study protocol archived on the Open
+Science Framework</a></li>
+<li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent
+trapping pilot (November-December 2020)</a></li>
+<li><a href="posts/trapping_visits/index.html">Rodent trapping visit
+reports (Visit 1 to 3)</a></li>
+<li><a href="images/PHA_poster.pdf">Poster presented at PHAM
+2021</a></li>
+<li><a href="https://www.youtube.com/watch?v=5CSVF45rn9Q&amp;t=1s">Short
+video introducing the work</a></li>
 </ul>
-<p>Data collection for the longitudinal study began in April 2021</p>
-<h2 id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">(<a href="#ref-arruda2021niche" role="doc-biblioref">Arruda et al. 2021</a>)</span></h2>
-<p>Lassa fever (LF), a zoonotic illness, represents a public health burden in West African countries where the Lassa virus (LASV) circulates among rodents. Human exposure hinges significantly on LASV ecology, which is in turn shaped by various parameters such as weather seasonality and even virus and rodent-host genetics. Furthermore, human behaviour, despite playing a key role in the zoonotic nature of the disease, critically affects either the spread or control of human-to-human transmission. Previous estimations on LF burden date from the 80s and it is unclear how the population expansion and the improvement on diagnostics and surveillance methods have affected such predictions. Although recent data have contributed to the awareness of epidemics, the real impact of LF in West African communities will only be possible with the intensification of interdisciplinary efforts in research and public health approaches. This review discusses the causes and consequences of LF from a One Health perspective, and how the application of this concept can improve the surveillance and control of this disease in West Africa.</p>
+<h3 id="interim-analyses">Interim analyses</h3>
+<p>Subsequent to the pilot activity we have conducted 6 rounds of rodent
+trapping (as of June 2022), obtaining in excess of 26,000 trap nights
+across 4 village study sites. The interim descriptive analysis and
+visualisation of potential contact networks between different rodent
+genera was <a href="images/david_simons_EEID.pdf">presented</a> at the
+Ecology and Evolution of Infectious Diseases conference in Atlanta,
+Georgia in 2022.</p>
+<p>I produced an interactive report to facilitate discussions around
+this work with collaborators based at the Bernhard Nocht Institute of
+Tropical Medicine in Hamburg, Germany. This is available <a
+href="posts/2022-06-09-interactive-rodent-trapping/index.html">here</a>,
+it may take some time to load and small images can be zoomed in on.</p>
+<h3
+id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The
+niche of One Health approaches in Lassa fever surveillance and control
+<span class="citation" data-cites="arruda2021niche">(<a
+href="#ref-arruda2021niche" role="doc-biblioref">Arruda et al.
+2021</a>)</span></h3>
+<p>Lassa fever (LF), a zoonotic illness, represents a public health
+burden in West African countries where the Lassa virus (LASV) circulates
+among rodents. Human exposure hinges significantly on LASV ecology,
+which is in turn shaped by various parameters such as weather
+seasonality and even virus and rodent-host genetics. Furthermore, human
+behaviour, despite playing a key role in the zoonotic nature of the
+disease, critically affects either the spread or control of
+human-to-human transmission. Previous estimations on LF burden date from
+the 80s and it is unclear how the population expansion and the
+improvement on diagnostics and surveillance methods have affected such
+predictions. Although recent data have contributed to the awareness of
+epidemics, the real impact of LF in West African communities will only
+be possible with the intensification of interdisciplinary efforts in
+research and public health approaches. This review discusses the causes
+and consequences of LF from a One Health perspective, and how the
+application of this concept can improve the surveillance and control of
+this disease in West Africa.</p>
 <ul>
-<li><a href="https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0">Link to publication</a></li>
+<li><a
+href="https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0">Link
+to publication</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
 <div id="ref-arruda2021niche" class="csl-entry" role="doc-biblioentry">
-Arruda, Liã Bárbara, Najmul Haider, Ayodeji Olayemi, David Simons, Deborah Ehichioya, Adesola Yinka-Ogunleye, Rashid Ansumana, et al. 2021. <span>“The Niche of One Health Approaches in Lassa Fever Surveillance and Control.”</span> <em>Annals of Clinical Microbiology and Antimicrobials</em> 20 (1): 1–12.
+Arruda, Liã Bárbara, Najmul Haider, Ayodeji Olayemi, David Simons,
+Deborah Ehichioya, Adesola Yinka-Ogunleye, Rashid Ansumana, et al. 2021.
+<span>“The Niche of One Health Approaches in Lassa Fever Surveillance
+and Control.”</span> <em>Annals of Clinical Microbiology and
+Antimicrobials</em> 20 (1): 1–12.
 </div>
-<div id="ref-berguido_specific_2016" class="csl-entry" role="doc-biblioentry">
-Berguido, Francisco J., Sanne Charles Bodjo, Angelika Loitsch, and Adama Diallo. 2016. <span>“Specific Detection of Peste Des Petits Ruminants Virus Antibodies in Sheep and Goat Sera by the Luciferase Immunoprecipitation System.”</span> <em>Journal of Virological Methods</em> 227 (January): 40–46. <a href="https://doi.org/10.1016/j.jviromet.2015.10.008">https://doi.org/10.1016/j.jviromet.2015.10.008</a>.
+<div id="ref-berguido_specific_2016" class="csl-entry"
+role="doc-biblioentry">
+Berguido, Francisco J., Sanne Charles Bodjo, Angelika Loitsch, and Adama
+Diallo. 2016. <span>“Specific Detection of Peste Des Petits Ruminants
+Virus Antibodies in Sheep and Goat Sera by the Luciferase
+Immunoprecipitation System.”</span> <em>Journal of Virological
+Methods</em> 227 (January): 40–46. <a
+href="https://doi.org/10.1016/j.jviromet.2015.10.008">https://doi.org/10.1016/j.jviromet.2015.10.008</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->

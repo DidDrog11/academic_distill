@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>David Simons: Antimicrobial Resistance and the poultry industry</title>
@@ -1867,7 +1868,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2348,7 +2352,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2368,7 +2372,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Antimicrobial Resistance and the poultry industry","description":"This is where I list all of my AMR work","authors":[],"publishedDate":"2021-04-06T00:00:00.000+00:00"}
+{"title":"Antimicrobial Resistance and the poultry industry","description":"This is where I list all of my AMR work","authors":[],"publishedDate":"2021-04-06T00:00:00.000-04:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2392,6 +2396,8 @@ Projects
 <hr/>
 <a href="covid_19.html">COVID-19</a>
 <hr/>
+<a href="monkeypox.html">Monkeypox</a>
+<span class="nav-dropdown-header"></span>
 <a href="amr.html">Antimicrobial resistance</a>
 </div>
 </div>
@@ -2416,12 +2422,24 @@ Projects
 
 
 <div class="d-article">
-<p>I have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman <a href="https://orcid.org/0000-0003-3172-5912">(ORCiD)</a> and Sharifo Ali-Elmi <a href="https://orcid.org/0000-0002-4482-9182">(ORCiD)</a>.</p>
+<p>I have been involved in two recently published studies investigating
+the prevalence of AMR in chicken farms in Malaysia. This work has been
+led by Abdinasir Osman <a
+href="https://orcid.org/0000-0003-3172-5912">(ORCiD)</a> and Sharifo
+Ali-Elmi <a
+href="https://orcid.org/0000-0002-4482-9182">(ORCiD)</a>.</p>
 <ol type="1">
-<li>Antimicrobial Resistance Patterns and Risk Factors Associated with <em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study. Available from <a href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
-<li>Identification of Risk Factors Associated with Resistant <em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study. Availables from <a href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
+<li>Antimicrobial Resistance Patterns and Risk Factors Associated with
+<em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast
+of Peninsular Malaysia: A Cross-Sectional Study. Available from <a
+href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
+<li>Identification of Risk Factors Associated with Resistant
+<em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast
+of Peninsular Malaysia: A Cross Sectional Study. Availables from <a
+href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,12 +77,34 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -1868,7 +1890,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2349,7 +2374,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2369,7 +2394,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Zoonoses, Infectious Diseases and Antimicrobial Resistance","description":"Welcome to my personal website. I have organised my work by themes in the project dropdown menu in the navigation bar. I will post in progress work to this page alongside completed work. In progress work will be labelled as such.","authors":[],"publishedDate":"2021-04-06T00:00:00.000+00:00"}
+{"title":"Zoonoses, Infectious Diseases and Antimicrobial Resistance","description":"Welcome to my personal website. I have organised my work by themes in the project dropdown menu in the navigation bar. I will post in progress work to this page alongside completed work. In progress work will be labelled as such.","authors":[],"publishedDate":"2021-04-06T00:00:00.000-04:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2393,6 +2418,8 @@ Projects
 <hr/>
 <a href="covid_19.html">COVID-19</a>
 <hr/>
+<a href="monkeypox.html">Monkeypox</a>
+<span class="nav-dropdown-header"></span>
 <a href="amr.html">Antimicrobial resistance</a>
 </div>
 </div>
@@ -2412,7 +2439,10 @@ Projects
 <h1>Zoonoses, Infectious Diseases and Antimicrobial Resistance</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to my personal website. I have organised my work by themes in the project dropdown menu in the navigation bar. I will post in progress work to this page alongside completed work. In progress work will be labelled as such.</p></p>
+<p><p>Welcome to my personal website. I have organised my work by themes
+in the project dropdown menu in the navigation bar. I will post in
+progress work to this page alongside completed work. In progress work
+will be labelled as such.</p></p>
 </div>
 
 
@@ -2423,108 +2453,472 @@ Projects
 <ul>
 <li><a href="#lassa-fever"><span>Lassa fever</span></a>
 <ul>
-<li><a href="#lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</a></li>
-<li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</a></li>
-<li><a href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</a></li>
-<li><a href="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">(<span>Arruda et al. 2021</span>)</span></a></li>
+<li><a href="#lassa-mammarenavirus-assay-development"><em>Lassa
+mammarenavirus</em> assay development</a></li>
+<li><a href="#rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent
+ecology and zoonoses studies in West Africa</a></li>
+<li><a
+href="#rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent
+trapping to inform a dynamic rodent assemblage and population model in
+Eastern Sierra Leone</a>
+<ul>
+<li><a href="#pilot-work">Pilot work</a></li>
+<li><a href="#interim-analyses">Interim analyses</a></li>
+<li><a
+href="#the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The
+niche of One Health approaches in Lassa fever surveillance and control
+<span class="citation" data-cites="arruda2021niche">(<span>Arruda et al.
+2021</span>)</span></a></li>
+</ul></li>
 </ul></li>
 <li><a href="#covid-19"><span>COVID-19</span></a>
 <ul>
-<li><a href="#covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</a></li>
-<li><a href="#covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</a></li>
-<li><a href="#other-work">Other work</a></li>
+<li><a href="#covid-19-transmission-and-control-strategies">COVID-19
+transmission and control strategies</a></li>
+<li><a href="#covid-19-and-the-association-with-smoking">COVID-19 and
+the association with smoking</a></li>
+<li><a
+href="#risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk of
+COVID-19 in individuals with Sickle Cell Disease</a></li>
+<li><a href="#omicron-response-work">Omicron response work</a>
+<ul>
+<li><a href="#vaccine-effectiveness">Vaccine effectiveness</a></li>
+<li><a href="#variant-detection">Variant detection</a></li>
+<li><a href="#comparing-transmission-of-omicron-and-delta">Comparing
+transmission of Omicron and Delta</a></li>
+<li><a href="#the-use-of-clinical-assessment-tools-in-uk-hospitals">The
+use of clinical assessment tools in UK hospitals</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#monkeypox"><span>Monkeypox</span></a>
+<ul>
+<li><a href="#community-transmission-of-monkeypox">Community
+transmission of Monkeypox</a></li>
+<li><a
+href="#current-research-gaps-in-understanding-monkeypox-spillover">Current
+research gaps in understanding Monkeypox spillover</a></li>
 </ul></li>
 <li><a href="#amr-and-chickens"><span>AMR and Chickens</span></a></li>
 </ul>
 </nav>
 </div>
-<p>My work is organised into three themes:</p>
+<p>You can read a bit more about me and the winding route I have taken
+towards getting involved in academic research <a
+href="about.html">here</a>.</p>
+<p>My work is organised into four themes:</p>
 <ol type="1">
-<li>Lassa fever, including assay development, epidemiology and rodent ecology</li>
-<li>Research on COVID-19, specifically the interaction between cigarette smoking and SARS-CoV-2/COVID-19 infection, severity and mortality</li>
-<li>A one health approach to antimicrobial resistance particularly within the poultry industry</li>
+<li>Lassa fever, including assay development, epidemiology and rodent
+ecology</li>
+<li>Research on COVID-19, specifically the interaction between cigarette
+smoking and SARS-CoV-2/COVID-19 infection, severity and mortality. In my
+role with the Outbreak Surveillance Team (OST) at the UK Health Security
+Agency I have been involved in several pieces of work focussed on the
+Omicron variant. 3.During the ongoing (March - Ongoing 2022)
+international outbreak of Monkeypox within PANDORA we spent some time
+thinking about current research gaps and what may be helpful to focus on
+in the future. In my role with OST I have been involved in describing
+the epidemiology of the emerging outbreak.</li>
+<li>A one health approach to antimicrobial resistance particularly
+within the poultry industry</li>
 </ol>
-<p>I have recentyl completed my PhD upgrading process, the report I produced for this is available <a href="posts/2021-10-19-upgradedocument/index.html">here</a></p>
+<p>I have recently completed my PhD upgrading process, the report I
+produced for this is available <a
+href="posts/2021-10-19-upgradedocument/index.html">here</a>.</p>
 <h1 id="lassa-fever"><a href="lassa_fever.html">Lassa fever</a></h1>
-<h2 id="lassa-mammarenavirus-assay-development"><em>Lassa mammarenavirus</em> assay development</h2>
+<h2 id="lassa-mammarenavirus-assay-development"><em>Lassa
+mammarenavirus</em> assay development</h2>
 <p><strong>In progress</strong></p>
-<p>Diagnostics for Lassa mammarenavirus (LASV) are challenging due to the variability in viral sequence and structure. Several commercial PCR and antibody kits are available. To our knowledge there no pan-species antibody assays. To support our ongoing work on understanding the epidemiology and transmission dynamics in multi-species systems in endemic regions we have begun developing a cross-species assay. We adopted an approach that has been found to be successful for <em>Peste des petits ruminants</em> a virus that affects goats, sheep and camels and is targeted for eradication. These assays are built on the Luciferase Immunoprecipitation System <span class="citation" data-cites="berguido_specific_2016">(<a href="#ref-berguido_specific_2016" role="doc-biblioref">Berguido et al. 2016</a>)</span> which detect the presence of antibodies against the presented antigen.</p>
-<p>Our work so far in the development of the assay is presented in the following posts:</p>
+<p>Diagnostics for Lassa mammarenavirus (LASV) are challenging due to
+the variability in viral sequence and structure. Several commercial PCR
+and antibody kits are available. To our knowledge there no pan-species
+antibody assays. To support our ongoing work on understanding the
+epidemiology and transmission dynamics in multi-species systems in
+endemic regions we have begun developing a cross-species assay. We
+adopted an approach that has been found to be successful for <em>Peste
+des petits ruminants</em> a virus that affects goats, sheep and camels
+and is targeted for eradication. These assays are built on the
+Luciferase Immunoprecipitation System <span class="citation"
+data-cites="berguido_specific_2016">(<a
+href="#ref-berguido_specific_2016" role="doc-biblioref">Berguido et al.
+2016</a>)</span> which detect the presence of antibodies against the
+presented antigen.</p>
+<p>Our work so far in the development of the assay is presented in the
+following posts:</p>
 <ul>
-<li><a href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification of potential antigenic epitopes</a></li>
+<li><a
+href="posts/2021-04-06-luciferase-immunoprecipitations-system/index.html">Identification
+of potential antigenic epitopes</a></li>
 </ul>
-<h2 id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent ecology and zoonoses studies in West Africa</h2>
+<h2 id="rodent-ecology-and-zoonoses-studies-in-west-africa">Rodent
+ecology and zoonoses studies in West Africa</h2>
 <p><strong>In progress</strong></p>
-<p>I am in the process of conducting a scoping review to consolidate prior research that has involved the trapping of individual rodents in the WHO West Africa region. I have made my initial results available below. I will continue to develop this and produce a data resource to accompany this work.</p>
+<p>I am in the process of conducting a scoping review to consolidate
+prior research that has involved the trapping of individual rodents in
+the WHO West Africa region. I have made my initial results available
+below. I will continue to develop this and produce a data resource to
+accompany this work.</p>
 <ul>
-<li><a href="posts/scoping-review/index.html">Rodent trapping to explore rodent ecology and zoonotic disease risk: A scoping review</a></li>
-<li>A <a href="images/EEID_poster.pdf">poster</a> was produced for the <a href="https://www.eeidconference2021.org/">Ecology and Evolution of Infectious Diseases</a> conference.</li>
+<li><a href="posts/scoping-review/index.html">Rodent trapping to explore
+rodent ecology and zoonotic disease risk: A scoping review</a></li>
+<li>A <a href="images/EEID_poster.pdf">poster</a> was produced for the
+<a href="https://www.eeidconference2021.org/">Ecology and Evolution of
+Infectious Diseases</a> conference.</li>
 </ul>
-<p>I have summarised the data from studies identified for this review and made it explorable through an RShiny application. The app is currently a work in progress but is available <a href="https://diddrog11.shinyapps.io/scoping_review_app/">here</a> if you have any comments on the app or would be interested in seeing the data explored slightly differently please don’t hesitate to contact me.</p>
-<h2 id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent trapping to inform a dynamic rodent assemblage and population model in Eastern Sierra Leone</h2>
+<p>This work has evolved from primarily descriptive towards focussing
+more on example species following feedback from my supervisors. The
+current version of the in progress, working manuscript is available <a
+href="images/manuscript_v4.pdf">here</a>.</p>
+<p>I have summarised the data from studies identified for this review
+and made it explorable through an RShiny application. The app is
+currently a work in progress but is available <a
+href="https://diddrog11.shinyapps.io/scoping_review_app/">here</a> if
+you have any comments on the app or would be interested in seeing the
+data explored slightly differently please don’t hesitate to contact
+me.</p>
+<h2
+id="rodent-trapping-to-inform-a-dynamic-rodent-assemblage-and-population-model-in-eastern-sierra-leone">Rodent
+trapping to inform a dynamic rodent assemblage and population model in
+Eastern Sierra Leone</h2>
 <p><strong>Ongoing work</strong></p>
-<p>A pilot study has been performed to inform a planned 2 year programme of repeat trapping in several settings in Sierra Leone. This pilot study was presented as a poster at the <a href="https://www.planetaryhealthannualmeeting.com/">Planetary Health Annual Meeting</a>.</p>
+<h3 id="pilot-work">Pilot work</h3>
+<p>A pilot study has been performed to inform a planned 2 year programme
+of repeat trapping in several settings in Sierra Leone. This pilot study
+was presented as a poster at the <a
+href="https://www.planetaryhealthannualmeeting.com/">Planetary Health
+Annual Meeting</a>.</p>
 <ul>
-<li><a href="https://osf.io/usjrd/">Study protocol archived on the Open Science Framework</a></li>
-<li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent trapping pilot (November-December 2020)</a></li>
-<li><a href="posts/trapping_visits/index.html">Rodent trapping visit reports (Visit 1 to 3)</a></li>
-<li><a href="images/PHA_poster.pdf">Poster presented at PHAM 2021</a></li>
-<li><a href="https://www.youtube.com/watch?v=5CSVF45rn9Q&amp;t=1s">Short video introducing the work</a></li>
+<li><a href="https://osf.io/usjrd/">Study protocol archived on the Open
+Science Framework</a></li>
+<li><a href="posts/2021-04-06-rodent-trapping-pilot/index.html">Rodent
+trapping pilot (November-December 2020)</a></li>
+<li><a href="posts/trapping_visits/index.html">Rodent trapping visit
+reports (Visit 1 to 3)</a></li>
+<li><a href="images/PHA_poster.pdf">Poster presented at PHAM
+2021</a></li>
+<li><a href="https://www.youtube.com/watch?v=5CSVF45rn9Q&amp;t=1s">Short
+video introducing the work</a></li>
 </ul>
-<p>Data collection for the longitudinal study began in April 2021</p>
-<h2 id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The niche of One Health approaches in Lassa fever surveillance and control <span class="citation" data-cites="arruda2021niche">(<a href="#ref-arruda2021niche" role="doc-biblioref">Arruda et al. 2021</a>)</span></h2>
-<p>Lassa fever (LF), a zoonotic illness, represents a public health burden in West African countries where the Lassa virus (LASV) circulates among rodents. Human exposure hinges significantly on LASV ecology, which is in turn shaped by various parameters such as weather seasonality and even virus and rodent-host genetics. Furthermore, human behaviour, despite playing a key role in the zoonotic nature of the disease, critically affects either the spread or control of human-to-human transmission. Previous estimations on LF burden date from the 80s and it is unclear how the population expansion and the improvement on diagnostics and surveillance methods have affected such predictions. Although recent data have contributed to the awareness of epidemics, the real impact of LF in West African communities will only be possible with the intensification of interdisciplinary efforts in research and public health approaches. This review discusses the causes and consequences of LF from a One Health perspective, and how the application of this concept can improve the surveillance and control of this disease in West Africa.</p>
+<h3 id="interim-analyses">Interim analyses</h3>
+<p>Subsequent to the pilot activity we have conducted 6 rounds of rodent
+trapping (as of June 2022), obtaining in excess of 26,000 trap nights
+across 4 village study sites. The interim descriptive analysis and
+visualisation of potential contact networks between different rodent
+genera was <a href="images/david_simons_EEID.pdf">presented</a> at the
+Ecology and Evolution of Infectious Diseases conference in Atlanta,
+Georgia in 2022.</p>
+<p>I produced an interactive report to facilitate discussions around
+this work with collaborators based at the Bernhard Nocht Institute of
+Tropical Medicine in Hamburg, Germany. This is available <a
+href="posts/2022-06-09-interactive-rodent-trapping/index.html">here</a>,
+it may take some time to load and small images can be zoomed in on.</p>
+<h3
+id="the-niche-of-one-health-approaches-in-lassa-fever-surveillance-and-control-arruda2021niche">The
+niche of One Health approaches in Lassa fever surveillance and control
+<span class="citation" data-cites="arruda2021niche">(<a
+href="#ref-arruda2021niche" role="doc-biblioref">Arruda et al.
+2021</a>)</span></h3>
+<p>Lassa fever (LF), a zoonotic illness, represents a public health
+burden in West African countries where the Lassa virus (LASV) circulates
+among rodents. Human exposure hinges significantly on LASV ecology,
+which is in turn shaped by various parameters such as weather
+seasonality and even virus and rodent-host genetics. Furthermore, human
+behaviour, despite playing a key role in the zoonotic nature of the
+disease, critically affects either the spread or control of
+human-to-human transmission. Previous estimations on LF burden date from
+the 80s and it is unclear how the population expansion and the
+improvement on diagnostics and surveillance methods have affected such
+predictions. Although recent data have contributed to the awareness of
+epidemics, the real impact of LF in West African communities will only
+be possible with the intensification of interdisciplinary efforts in
+research and public health approaches. This review discusses the causes
+and consequences of LF from a One Health perspective, and how the
+application of this concept can improve the surveillance and control of
+this disease in West Africa.</p>
 <ul>
-<li><a href="https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0">Link to publication</a></li>
+<li><a
+href="https://ann-clinmicrob.biomedcentral.com/articles/10.1186/s12941-021-00431-0">Link
+to publication</a></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <h1 id="covid-19"><a href="covid_19.html">COVID-19</a></h1>
-<h2 id="covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</h2>
-<p>The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased after the summer I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response.</p>
+<h3 id="covid-19-transmission-and-control-strategies">COVID-19
+transmission and control strategies</h3>
+<p>The COVID-19 pandemic is an example of the potential impact from
+emerging zoonotic infectious diseases. During the early stages of the
+pandemic I supported CMMID at LSHTM with their data management pipeline
+and was a member of the COVID-19 working group. As case numbers in the
+UK increased after the summer I reduced my role in the epidemiological
+and modelling work to increase the amount of time I could contribute to
+the clinical response.</p>
 <ul>
-<li><a href="https://cmmid.github.io/topics/covid19/">CMMID</a> website with a list of the outputs from the working group</li>
-<li><a href="https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html">ASMODEE</a> an ongoing COVID-19 surveillance activity I remain involved in</li>
+<li><a href="https://cmmid.github.io/topics/covid19/">CMMID</a> website
+with a list of the outputs from the working group</li>
+<li><a
+href="https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html">ASMODEE</a>
+an ongoing COVID-19 surveillance activity I remain involved in</li>
 </ul>
-<h2 id="covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</h2>
-<p>Since March 2020 I have also been involved in a project investigating the association of smoking and SARS-CoV-2 infection, and COVID-19 severity and mortality. This work has been led by <a href="https://www.olgaperski.com">Olga Perski</a> and colleagues at <a href="https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/research/ucl-tobacco-alcohol-research-group-utarg">UCL-Tobacco and Alcohol Research Group</a>.</p>
-<p>Current and former smoking is associated with worse outcomes and increased rates of hospitalisation from respiratory infections such as Respiratory Synciatial Virus, Influenza viruses and bacterial infections. Because of this there was an early concern about how the pandemic caused by SARS-CoV-2 may interact with smoking.</p>
-<p>Early data released from healthcare services in China in the early parts of 2020 suggested that smoking was not a significant risk factor for COVID-19 disease. Whether this was a true effect or reflected poor recording or reporting was unclear. We began to synthesise the published and pre-print literature to investigate the specific association of smoking and COVID-19. This was initially performed as a report for the Royal College of Physicians, London and was expanded following a request from Public Health England.</p>
+<h3 id="covid-19-and-the-association-with-smoking">COVID-19 and the
+association with smoking</h3>
+<p>Since March 2020 I have also been involved in a project investigating
+the association of smoking and SARS-CoV-2 infection, and COVID-19
+severity and mortality. This work has been led by <a
+href="https://www.olgaperski.com">Olga Perski</a> and colleagues at <a
+href="https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/research/ucl-tobacco-alcohol-research-group-utarg">UCL-Tobacco
+and Alcohol Research Group</a>.</p>
+<p>Current and former smoking is associated with worse outcomes and
+increased rates of hospitalisation from respiratory infections such as
+Respiratory Synciatial Virus, Influenza viruses and bacterial
+infections. Because of this there was an early concern about how the
+pandemic caused by SARS-CoV-2 may interact with smoking.</p>
+<p>Early data released from healthcare services in China in the early
+parts of 2020 suggested that smoking was not a significant risk factor
+for COVID-19 disease. Whether this was a true effect or reflected poor
+recording or reporting was unclear. We began to synthesise the published
+and pre-print literature to investigate the specific association of
+smoking and COVID-19. This was initially performed as a report for the
+Royal College of Physicians, London and was expanded following a request
+from Public Health England.</p>
 <ul>
-<li><a href="posts/2021-04-06-smoking-covid-living-review/index.html">COVID-19 and smoking living evidence review</a></li>
-<li><a href="posts/2021-04-06-smoking-covid-hospitalised/index.html">The association of smoking status with hospitalisation for COVID-19</a></li>
+<li><a
+href="posts/2021-04-06-smoking-covid-living-review/index.html">COVID-19
+and smoking living evidence review</a></li>
+<li><a href="posts/2021-04-06-smoking-covid-hospitalised/index.html">The
+association of smoking status with hospitalisation for COVID-19</a></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/quit_for_covid.jpg" alt="Quit for COVID" width="200" />
 <p class="caption">
 Figure 1: Quit for COVID
 </p>
 </div>
 </div>
-<h2 id="other-work">Other work</h2>
-<p>Another group that were potentially at greater risk of adverse outcomes from COVID-19 infection were individuals suffering with Sickle Cell Disease. We wrote a commentary piece to draw attention to this group of individuals who are more prevalent in sub-Saharan countries in Africa that also suffer from a further burden of often under-developed healthcare infrastructure <span class="citation" data-cites="dexter_mitigating_2020">(<a href="#ref-dexter_mitigating_2020" role="doc-biblioref">Dexter et al. 2020</a>)</span></p>
-<p>Along with colleagues from the PANDORA network we tried to identify the countries that could be at greatest risk of importation of cases early in the epidemic based off flight data <span class="citation" data-cites="haider_passengers_2020">(<a href="#ref-haider_passengers_2020" role="doc-biblioref">Haider et al. 2020</a>)</span></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk
+of COVID-19 in individuals with Sickle Cell Disease</h2>
+<p>Another group that were potentially at greater risk of adverse
+outcomes from COVID-19 infection were individuals suffering with Sickle
+Cell Disease. We wrote a commentary piece to draw attention to this
+group of individuals who are more prevalent in sub-Saharan countries in
+Africa that also suffer from a further burden of often under-developed
+healthcare infrastructure <span class="citation"
+data-cites="dexter_mitigating_2020">(<a
+href="#ref-dexter_mitigating_2020" role="doc-biblioref">Dexter et al.
+2020</a>)</span></p>
+<p>Along with colleagues from the PANDORA network we tried to identify
+the countries that could be at greatest risk of importation of cases
+early in the epidemic based off flight data <span class="citation"
+data-cites="haider_passengers_2020">(<a
+href="#ref-haider_passengers_2020" role="doc-biblioref">Haider et al.
+2020</a>)</span></p>
+<h2 id="omicron-response-work">Omicron response work</h2>
+<h3 id="vaccine-effectiveness">Vaccine effectiveness</h3>
+<p>Following the emergence and rapid spread of the Omicron (B.1.1.529)
+variant of SARS-CoV-2 there was substantial interest in the
+effectiveness of current vaccines. A test-negative case-control design
+was used to estimate vaccine effectiveness against symptomatic disease
+compared to the previously circulating Delta (B.1.617.2) variant. We
+observed that primary vaccination with ChAdOx1 nCoV-19 or BNT162b2
+vaccine provided limited protection against symptomatic disease. Booster
+vaccination following a completed primary course increased protection,
+but protection waned over time <span class="citation"
+data-cites="andrews2022covid">(<a href="#ref-andrews2022covid"
+role="doc-biblioref">Andrews et al. 2022</a>)</span>. This work has been
+published in the <a href="https://doi.org/10.1056/nejmoa2119451">New
+England Journal of Medicine</a></p>
+<h3 id="variant-detection">Variant detection</h3>
+<p>Within UKHSA we were fortunate that we could monitor the emergence of
+Omicron against the background of the prior Delta wave. This was
+possible as many of the laboratories conducting surveillance were able
+to detect S-gene target failure allowing differentiation between Omicron
+and Delta. This led to rapid identification of possible Omicron cases,
+alongside real-time surveillance and modelling of Omicron growth. This
+was key to initial public health action (including case identification
+and incident management), and we share applied insights on how and when
+these surveillance approaches can inform public health
+interventions<span class="citation"
+data-cites="blomquist2022enhancing">(<a
+href="#ref-blomquist2022enhancing" role="doc-biblioref">Blomquist et al.
+2022</a>)</span>. This work has been published in <a
+href="https://doi.org/10.2807/1560-7917.es.2022.27.11.2200143"><em>Eurosurveillance</em></a>.</p>
+<h3 id="comparing-transmission-of-omicron-and-delta">Comparing
+transmission of Omicron and Delta</h3>
+<p>This epidemiological study assessed differences in transmissibility
+between the Omicron and Delta. We used contact tracing data alongside
+national surveillance to estimate the transmission parameters. We found
+that the proportion of index cases resulting in a cluster of
+transmission was twice as high for Omicron (16.1%) compared to Delta
+(7.3%). Our study identified increased risk of onward transmission of
+Omicron, consistent with its successful global displacement of Delta
+<span class="citation" data-cites="allen2022comparative">(<a
+href="#ref-allen2022comparative" role="doc-biblioref">Allen et al.
+2022</a>)</span>. This work is currently registered as a pre-print on <a
+href="https://doi.org/10.1101/2022.02.15.22271001">MedRxiv</a></p>
+<h3 id="the-use-of-clinical-assessment-tools-in-uk-hospitals">The use of
+clinical assessment tools in UK hospitals</h3>
+<p>In my clinical role I was involved in a large scale audit of the use
+of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was
+designed to risk stratify hospitalised patients with COVID-19. We
+assessed the inclusion of this score in COVID-19 management guidance and
+its documentation in patients’ case notes in January 2021 in UK
+hospitals. We found that score documentation in case notes was highly
+variable. Higher documentation of 4C Score was associated with score
+integration within admissions proformas, inclusion of 4C Score variables
+or link to online calculator, and management decisions. Integration of
+4C Score within clinical pathways may encourage more widespread use
+<span class="citation" data-cites="blunsum2021evaluation">(<a
+href="#ref-blunsum2021evaluation" role="doc-biblioref">Blunsum et al.
+2021</a>)</span>. This work is currently registered as a pre-print on <a
+href="https://doi.org/10.1101/2021.12.18.21268003">MedRxiv</a></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="monkeypox"><a href="monkeypox.html">Monkeypox</a></h1>
+<p>I have been involved in two recently published pieces of work. The
+first, investigating Monkeypox community transmission following
+introduction into the UK identified as three separate incidents.</p>
+<h3 id="community-transmission-of-monkeypox">Community transmission of
+Monkeypox</h3>
+<p>Monkeypox is a re-emerging zoonotic infection caused by monkeypox
+virus (MPXV). In the past case detection has been primarily detected in
+West and Central Africa. The incubation period of monkeypox can be up to
+21 days. In the United Kingdom (UK) all previous seven cases ever
+reported were either imported, or household or healthcare contacts of
+imported cases. In this report, we described an ongoing outbreak of MPXV
+infections in the UK, detected since the beginning of May 2022 affecting
+people without documented history of travel to endemic countries <span
+class="citation" data-cites="vivancos2022community">(<a
+href="#ref-vivancos2022community" role="doc-biblioref">Vivancos et al.
+2022</a>)</span>. This work has been published in <a
+href="https://doi.org/10.2807/1560-7917.es.2022.27.22.2200422">Eurosurveillance</a>.</p>
+<h3
+id="current-research-gaps-in-understanding-monkeypox-spillover">Current
+research gaps in understanding Monkeypox spillover</h3>
+<p>In this work we explored the research gaps on Monkeypox (MPX) virus
+epidemiology in endemic countries. We presented hypotheses for the
+recent increase of MPX cases in West Africa as a possible explanation
+for the current outbreak of internationally distributed cases. First,
+that the true burden of MPX in West and Central Africa is poorly
+understood. Second, that the diversity and extent of the animal
+reservoir remains unknown. We hypothesised that the changing
+human-rodent interaction rates in recent years may facilitate increased
+transmission of MPXV in endemic settings. We further hypothesised that
+following the end of routine smallpox vaccination, the larger and more
+interconnected immune-naïve population has crossed a threshold resulting
+in more sustainable human-to-human transmission of MPXV. We call for
+local led research efforts on the estimation of the basic and effective
+reproduction rate (R0 and Re) in different populations is required <span
+class="citation" data-cites="haiderincreased">(<a
+href="#ref-haiderincreased" role="doc-biblioref">Haider et al.,
+n.d.</a>)</span>. This work has been published in the <a
+href="https://doi.org/10.1016/j.ijid.2022.05.058">International Journal
+of Infectious Diseases</a></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <h1 id="amr-and-chickens"><a href="amr.html">AMR and Chickens</a></h1>
-<p>I have been involved in two recently published studies investigating the prevalence of AMR in chicken farms in Malaysia. This work has been led by Abdinasir Osman <a href="https://orcid.org/0000-0003-3172-5912">(ORCiD)</a> and Sharifo Ali-Elmi <a href="https://orcid.org/0000-0002-4482-9182">(ORCiD)</a>.</p>
+<p>I have been involved in two recently published studies investigating
+the prevalence of AMR in chicken farms in Malaysia. This work has been
+led by Abdinasir Osman <a
+href="https://orcid.org/0000-0003-3172-5912">(ORCiD)</a> and Sharifo
+Ali-Elmi <a
+href="https://orcid.org/0000-0002-4482-9182">(ORCiD)</a>.</p>
 <ol type="1">
-<li>Antimicrobial Resistance Patterns and Risk Factors Associated with <em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross-Sectional Study. Available from <a href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
-<li>Identification of Risk Factors Associated with Resistant <em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast of Peninsular Malaysia: A Cross Sectional Study. Availables from <a href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
+<li>Antimicrobial Resistance Patterns and Risk Factors Associated with
+<em>Salmonella spp.</em> Isolates from Poultry Farms in the East Coast
+of Peninsular Malaysia: A Cross-Sectional Study. Available from <a
+href="https://www.mdpi.com/2076-0817/10/9/1160"><em>pathogens</em></a>.</li>
+<li>Identification of Risk Factors Associated with Resistant
+<em>Escherichia coli</em> Isolates from Poultry Farms in the East Coast
+of Peninsular Malaysia: A Cross Sectional Study. Availables from <a
+href="https://www.mdpi.com/2079-6382/10/2/117"><em>antibiotics</em></a>.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-allen2022comparative" class="csl-entry"
+role="doc-biblioentry">
+Allen, Hester, Elise Tessier, Charlie Turner, Charlotte Anderson, Paula
+Blomquist, David Simons, Alessandra Lochen, et al. 2022.
+<span>“Comparative Transmission of SARS-CoV-2 Omicron (b. 1.1. 529) and
+Delta (b. 1.617. 2) Variants and the Impact of Vaccination: National
+Cohort Study, England.”</span> <em>MedRxiv</em>.
+</div>
+<div id="ref-andrews2022covid" class="csl-entry" role="doc-biblioentry">
+Andrews, Nick, Julia Stowe, Freja Kirsebom, Samuel Toffa, Tim Rickeard,
+Eileen Gallagher, Charlotte Gower, et al. 2022. <span>“Covid-19 Vaccine
+Effectiveness Against the Omicron (b. 1.1. 529) Variant.”</span> <em>New
+England Journal of Medicine</em> 386 (16): 1532–46.
+</div>
 <div id="ref-arruda2021niche" class="csl-entry" role="doc-biblioentry">
-Arruda, Liã Bárbara, Najmul Haider, Ayodeji Olayemi, David Simons, Deborah Ehichioya, Adesola Yinka-Ogunleye, Rashid Ansumana, et al. 2021. <span>“The Niche of One Health Approaches in Lassa Fever Surveillance and Control.”</span> <em>Annals of Clinical Microbiology and Antimicrobials</em> 20 (1): 1–12.
+Arruda, Liã Bárbara, Najmul Haider, Ayodeji Olayemi, David Simons,
+Deborah Ehichioya, Adesola Yinka-Ogunleye, Rashid Ansumana, et al. 2021.
+<span>“The Niche of One Health Approaches in Lassa Fever Surveillance
+and Control.”</span> <em>Annals of Clinical Microbiology and
+Antimicrobials</em> 20 (1): 1–12.
 </div>
-<div id="ref-berguido_specific_2016" class="csl-entry" role="doc-biblioentry">
-Berguido, Francisco J., Sanne Charles Bodjo, Angelika Loitsch, and Adama Diallo. 2016. <span>“Specific Detection of Peste Des Petits Ruminants Virus Antibodies in Sheep and Goat Sera by the Luciferase Immunoprecipitation System.”</span> <em>Journal of Virological Methods</em> 227 (January): 40–46. <a href="https://doi.org/10.1016/j.jviromet.2015.10.008">https://doi.org/10.1016/j.jviromet.2015.10.008</a>.
+<div id="ref-berguido_specific_2016" class="csl-entry"
+role="doc-biblioentry">
+Berguido, Francisco J., Sanne Charles Bodjo, Angelika Loitsch, and Adama
+Diallo. 2016. <span>“Specific Detection of Peste Des Petits Ruminants
+Virus Antibodies in Sheep and Goat Sera by the Luciferase
+Immunoprecipitation System.”</span> <em>Journal of Virological
+Methods</em> 227 (January): 40–46. <a
+href="https://doi.org/10.1016/j.jviromet.2015.10.008">https://doi.org/10.1016/j.jviromet.2015.10.008</a>.
 </div>
-<div id="ref-dexter_mitigating_2020" class="csl-entry" role="doc-biblioentry">
-Dexter, Daniel, David Simons, Charles Kiyaga, Nathan Kapata, Francine Ntoumi, Richard Kock, and Alimuddin Zumla. 2020. <span>“Mitigating the Effect of the <span>COVID</span>-19 Pandemic on Sickle Cell Disease Services in <span>African</span> Countries.”</span> <em>The Lancet Haematology</em> 7 (6): e430–32. <a href="https://doi.org/10.1016/S2352-3026(20)30122-8">https://doi.org/10.1016/S2352-3026(20)30122-8</a>.
+<div id="ref-blomquist2022enhancing" class="csl-entry"
+role="doc-biblioentry">
+Blomquist, Paula B, Jessica Bridgen, Neil Bray, Anne Marie O’Connell,
+Daniel West, Natalie Groves, Eileen Gallagher, et al. 2022.
+<span>“Enhancing Epidemiological Surveillance of the Emergence of the
+SARS-CoV-2 Omicron Variant Using Spike Gene Target Failure Data,
+England, 15 November to 31 December 2021.”</span>
+<em>Eurosurveillance</em> 27 (11): 2200143.
 </div>
-<div id="ref-haider_passengers_2020" class="csl-entry" role="doc-biblioentry">
-Haider, Najmul, Alexei Yavlinsky, David Simons, Abdinasir Yusuf Osman, Francine Ntoumi, Alimuddin Zumla, and Richard Kock. 2020. <span>“Passengers’ Destinations from <span>China</span>: Low Risk of <span>Novel</span> <span>Coronavirus</span> (2019-<span class="nocase">nCoV</span>) Transmission into <span>Africa</span> and <span>South</span> <span>America</span>.”</span> <em>Epidemiology &amp; Infection</em> 148. <a href="https://doi.org/10.1017/S0950268820000424">https://doi.org/10.1017/S0950268820000424</a>.
+<div id="ref-blunsum2021evaluation" class="csl-entry"
+role="doc-biblioentry">
+Blunsum, Andrew E, Jonathan S Perkins, Areeb Arshad, Sukrit Bajpai,
+Karen Barclay-Elliott, Sanjita Brito-Mutunayagam, Rebecca Brooks, et al.
+2021. <span>“Evaluation of the Implementation of the 4c Mortality Score
+in United Kingdom Hospitals During the Second Pandemic Wave.”</span>
+<em>medRxiv</em>.
+</div>
+<div id="ref-dexter_mitigating_2020" class="csl-entry"
+role="doc-biblioentry">
+Dexter, Daniel, David Simons, Charles Kiyaga, Nathan Kapata, Francine
+Ntoumi, Richard Kock, and Alimuddin Zumla. 2020. <span>“Mitigating the
+Effect of the <span>COVID</span>-19 Pandemic on Sickle Cell Disease
+Services in <span>African</span> Countries.”</span> <em>The Lancet
+Haematology</em> 7 (6): e430–32. <a
+href="https://doi.org/10.1016/S2352-3026(20)30122-8">https://doi.org/10.1016/S2352-3026(20)30122-8</a>.
+</div>
+<div id="ref-haiderincreased" class="csl-entry" role="doc-biblioentry">
+Haider, Najmul, Javier Guitian, David Simons, Danny Asogun, Rashid
+Ansumana, Isobella Honeyborne, Thirumalaisamy P Velavan, et al. n.d.
+<span>“Increased Outbreaks of Monkeypox Highlight Gaps in Actual Disease
+Burden in Sub-Saharan Africa and in Animal Reservoirs.”</span>
+<em>International Journal of Infectious Diseases: IJID: Official
+Publication of the International Society for Infectious Diseases</em>,
+S1201–9712.
+</div>
+<div id="ref-haider_passengers_2020" class="csl-entry"
+role="doc-biblioentry">
+Haider, Najmul, Alexei Yavlinsky, David Simons, Abdinasir Yusuf Osman,
+Francine Ntoumi, Alimuddin Zumla, and Richard Kock. 2020.
+<span>“Passengers’ Destinations from <span>China</span>: Low Risk of
+<span>Novel</span> <span>Coronavirus</span> (2019-<span
+class="nocase">nCoV</span>) Transmission into <span>Africa</span> and
+<span>South</span> <span>America</span>.”</span> <em>Epidemiology &amp;
+Infection</em> 148. <a
+href="https://doi.org/10.1017/S0950268820000424">https://doi.org/10.1017/S0950268820000424</a>.
+</div>
+<div id="ref-vivancos2022community" class="csl-entry"
+role="doc-biblioentry">
+Vivancos, Roberto, Charlotte Anderson, Paula Blomquist, Sooria
+Balasegaram, Anita Bell, Louise Bishop, Colin S Brown, et al. 2022.
+<span>“Community Transmission of Monkeypox in the United Kingdom, April
+to May 2022.”</span> <em>Eurosurveillance</em> 27 (22): 2200422.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->

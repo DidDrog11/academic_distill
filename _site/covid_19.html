@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,12 +77,34 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -113,6 +135,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <meta name="citation_reference" content="citation_title=Mitigating the effect of the COVID-19 pandemic on sickle cell disease services in African countries;citation_publication_date=2020;citation_volume=7;citation_doi=10.1016/S2352-3026(20)30122-8;citation_issn=2352-3026;citation_author=Daniel Dexter;citation_author=David Simons;citation_author=Charles Kiyaga;citation_author=Nathan Kapata;citation_author=Francine Ntoumi;citation_author=Richard Kock;citation_author=Alimuddin Zumla"/>
   <meta name="citation_reference" content="citation_title=Passengers’ destinations from China: Low risk of Novel Coronavirus (2019-nCoV) transmission into Africa and South America;citation_publication_date=2020;citation_volume=148;citation_doi=10.1017/S0950268820000424;citation_issn=0950-2688, 1469-4409;citation_author=Najmul Haider;citation_author=Alexei Yavlinsky;citation_author=David Simons;citation_author=Abdinasir Yusuf Osman;citation_author=Francine Ntoumi;citation_author=Alimuddin Zumla;citation_author=Richard Kock"/>
+  <meta name="citation_reference" content="citation_title=Covid-19 vaccine effectiveness against the omicron (b. 1.1. 529) variant;citation_publication_date=2022;citation_publisher=Mass Medical Soc;citation_volume=386;citation_author=Nick Andrews;citation_author=Julia Stowe;citation_author=Freja Kirsebom;citation_author=Samuel Toffa;citation_author=Tim Rickeard;citation_author=Eileen Gallagher;citation_author=Charlotte Gower;citation_author=Meaghan Kall;citation_author=Natalie Groves;citation_author=Anne-Marie O’Connell;citation_author=Covid-19 vaccine effectiveness against the omicron (b. 1.1. 529) variant"/>
+  <meta name="citation_reference" content="citation_title=Enhancing epidemiological surveillance of the emergence of the SARS-CoV-2 omicron variant using spike gene target failure data, england, 15 november to 31 december 2021;citation_publication_date=2022;citation_publisher=European Centre for Disease Prevention; Control;citation_volume=27;citation_author=Paula B Blomquist;citation_author=Jessica Bridgen;citation_author=Neil Bray;citation_author=Anne Marie O’Connell;citation_author=Daniel West;citation_author=Natalie Groves;citation_author=Eileen Gallagher;citation_author=Lara Utsi;citation_author=Christopher I Jarvis;citation_author=Jo L Hardstaff;citation_author=Enhancing epidemiological surveillance of the emergence of the SARS-CoV-2 omicron variant using spike gene target failure data, england, 15 november to 31 december 2021"/>
+  <meta name="citation_reference" content="citation_title=Comparative transmission of SARS-CoV-2 omicron (b. 1.1. 529) and delta (b. 1.617. 2) variants and the impact of vaccination: National cohort study, england;citation_publication_date=2022;citation_publisher=Cold Spring Harbor Laboratory Press;citation_author=Hester Allen;citation_author=Elise Tessier;citation_author=Charlie Turner;citation_author=Charlotte Anderson;citation_author=Paula Blomquist;citation_author=David Simons;citation_author=Alessandra Lochen;citation_author=Christopher I Jarvis;citation_author=Natalie Groves;citation_author=Fernando Capelastegui;citation_author=Comparative transmission of SARS-CoV-2 omicron (b. 1.1. 529) and delta (b. 1.617. 2) variants and the impact of vaccination: National cohort study, england"/>
+  <meta name="citation_reference" content="citation_title=Evaluation of the implementation of the 4C mortality score in united kingdom hospitals during the second pandemic wave;citation_publication_date=2021;citation_publisher=Cold Spring Harbor Laboratory Press;citation_author=Andrew E Blunsum;citation_author=Jonathan S Perkins;citation_author=Areeb Arshad;citation_author=Sukrit Bajpai;citation_author=Karen Barclay-Elliott;citation_author=Sanjita Brito-Mutunayagam;citation_author=Rebecca Brooks;citation_author=Terrence Chan;citation_author=Dominic Coates;citation_author=Alina Corobana;citation_author=Evaluation of the implementation of the 4C mortality score in united kingdom hospitals during the second pandemic wave"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -1870,7 +1896,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2351,7 +2380,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2371,7 +2400,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"COVID-19","description":"This is where I list all of my COVID-19 work","authors":[],"publishedDate":"2021-04-06T00:00:00.000+00:00"}
+{"title":"COVID-19","description":"This is where I list all of my COVID-19 work","authors":[],"publishedDate":"2021-04-06T00:00:00.000-04:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2395,6 +2424,8 @@ Projects
 <hr/>
 <a href="covid_19.html">COVID-19</a>
 <hr/>
+<a href="monkeypox.html">Monkeypox</a>
+<span class="nav-dropdown-header"></span>
 <a href="amr.html">Antimicrobial resistance</a>
 </div>
 </div>
@@ -2426,25 +2457,68 @@ Projects
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</a></li>
-<li><a href="#covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</a></li>
-<li><a href="#other-work">Other work</a></li>
+<li><a href="#covid-19-transmission-and-control-strategies">COVID-19
+transmission and control strategies</a></li>
+<li><a href="#covid-19-and-the-association-with-smoking">COVID-19 and
+the association with smoking</a></li>
+<li><a
+href="#risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk of
+COVID-19 in individuals with Sickle Cell Disease</a></li>
+<li><a href="#omicron-response-work">Omicron response work</a>
+<ul>
+<li><a href="#vaccine-effectiveness">Vaccine effectiveness</a></li>
+<li><a href="#variant-detection">Variant detection</a></li>
+<li><a href="#comparing-transmission-of-omicron-and-delta">Comparing
+transmission of Omicron and Delta</a></li>
+<li><a href="#the-use-of-clinical-assessment-tools-in-uk-hospitals">The
+use of clinical assessment tools in UK hospitals</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="covid-19-transmission-and-control-strategies">COVID-19 transmission and control strategies</h2>
-<p>The COVID-19 pandemic is an example of the potential impact from emerging zoonotic infectious diseases. During the early stages of the pandemic I supported CMMID at LSHTM with their data management pipeline and was a member of the COVID-19 working group. As case numbers in the UK increased after the summer I reduced my role in the epidemiological and modelling work to increase the amount of time I could contribute to the clinical response.</p>
+<h3 id="covid-19-transmission-and-control-strategies">COVID-19
+transmission and control strategies</h3>
+<p>The COVID-19 pandemic is an example of the potential impact from
+emerging zoonotic infectious diseases. During the early stages of the
+pandemic I supported CMMID at LSHTM with their data management pipeline
+and was a member of the COVID-19 working group. As case numbers in the
+UK increased after the summer I reduced my role in the epidemiological
+and modelling work to increase the amount of time I could contribute to
+the clinical response.</p>
 <ul>
-<li><a href="https://cmmid.github.io/topics/covid19/">CMMID</a> website with a list of the outputs from the working group</li>
-<li><a href="https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html">ASMODEE</a> an ongoing COVID-19 surveillance activity I remain involved in</li>
+<li><a href="https://cmmid.github.io/topics/covid19/">CMMID</a> website
+with a list of the outputs from the working group</li>
+<li><a
+href="https://covid19-nhs-pathways-asmodee.netlify.app/analyses-ccg.html">ASMODEE</a>
+an ongoing COVID-19 surveillance activity I remain involved in</li>
 </ul>
-<h2 id="covid-19-and-the-association-with-smoking">COVID-19 and the association with smoking</h2>
-<p>Since March 2020 I have also been involved in a project investigating the association of smoking and SARS-CoV-2 infection, and COVID-19 severity and mortality. This work has been led by <a href="https://www.olgaperski.com">Olga Perski</a> and colleagues at <a href="https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/research/ucl-tobacco-alcohol-research-group-utarg">UCL-Tobacco and Alcohol Research Group</a>.</p>
-<p>Current and former smoking is associated with worse outcomes and increased rates of hospitalisation from respiratory infections such as Respiratory Synciatial Virus, Influenza viruses and bacterial infections. Because of this there was an early concern about how the pandemic caused by SARS-CoV-2 may interact with smoking.</p>
-<p>Early data released from healthcare services in China in the early parts of 2020 suggested that smoking was not a significant risk factor for COVID-19 disease. Whether this was a true effect or reflected poor recording or reporting was unclear. We began to synthesise the published and pre-print literature to investigate the specific association of smoking and COVID-19. This was initially performed as a report for the Royal College of Physicians, London and was expanded following a request from Public Health England.</p>
+<h3 id="covid-19-and-the-association-with-smoking">COVID-19 and the
+association with smoking</h3>
+<p>Since March 2020 I have also been involved in a project investigating
+the association of smoking and SARS-CoV-2 infection, and COVID-19
+severity and mortality. This work has been led by <a
+href="https://www.olgaperski.com">Olga Perski</a> and colleagues at <a
+href="https://www.ucl.ac.uk/epidemiology-health-care/research/behavioural-science-and-health/research/ucl-tobacco-alcohol-research-group-utarg">UCL-Tobacco
+and Alcohol Research Group</a>.</p>
+<p>Current and former smoking is associated with worse outcomes and
+increased rates of hospitalisation from respiratory infections such as
+Respiratory Synciatial Virus, Influenza viruses and bacterial
+infections. Because of this there was an early concern about how the
+pandemic caused by SARS-CoV-2 may interact with smoking.</p>
+<p>Early data released from healthcare services in China in the early
+parts of 2020 suggested that smoking was not a significant risk factor
+for COVID-19 disease. Whether this was a true effect or reflected poor
+recording or reporting was unclear. We began to synthesise the published
+and pre-print literature to investigate the specific association of
+smoking and COVID-19. This was initially performed as a report for the
+Royal College of Physicians, London and was expanded following a request
+from Public Health England.</p>
 <ul>
-<li><a href="posts/2021-04-06-smoking-covid-living-review/index.html">COVID-19 and smoking living evidence review</a></li>
-<li><a href="posts/2021-04-06-smoking-covid-hospitalised/index.html">The association of smoking status with hospitalisation for COVID-19</a></li>
+<li><a
+href="posts/2021-04-06-smoking-covid-living-review/index.html">COVID-19
+and smoking living evidence review</a></li>
+<li><a href="posts/2021-04-06-smoking-covid-hospitalised/index.html">The
+association of smoking status with hospitalisation for COVID-19</a></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
@@ -2454,16 +2528,136 @@ Figure 1: Quit for COVID
 </p>
 </div>
 </div>
-<h2 id="other-work">Other work</h2>
-<p>Another group that were potentially at greater risk of adverse outcomes from COVID-19 infection were individuals suffering with Sickle Cell Disease. We wrote a commentary piece to draw attention to this group of individuals who are more prevalent in sub-Saharan countries in Africa that also suffer from a further burden of often under-developed healthcare infrastructure <span class="citation" data-cites="dexter_mitigating_2020">(<a href="#ref-dexter_mitigating_2020" role="doc-biblioref">Dexter et al. 2020</a>)</span></p>
-<p>Along with colleagues from the PANDORA network we tried to identify the countries that could be at greatest risk of importation of cases early in the epidemic based off flight data <span class="citation" data-cites="haider_passengers_2020">(<a href="#ref-haider_passengers_2020" role="doc-biblioref">Haider et al. 2020</a>)</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-dexter_mitigating_2020" class="csl-entry" role="doc-biblioentry">
-Dexter, Daniel, David Simons, Charles Kiyaga, Nathan Kapata, Francine Ntoumi, Richard Kock, and Alimuddin Zumla. 2020. <span>“Mitigating the Effect of the <span>COVID</span>-19 Pandemic on Sickle Cell Disease Services in <span>African</span> Countries.”</span> <em>The Lancet Haematology</em> 7 (6): e430–32. <a href="https://doi.org/10.1016/S2352-3026(20)30122-8">https://doi.org/10.1016/S2352-3026(20)30122-8</a>.
+<h2 id="risk-of-covid-19-in-individuals-with-sickle-cell-disease">Risk
+of COVID-19 in individuals with Sickle Cell Disease</h2>
+<p>Another group that were potentially at greater risk of adverse
+outcomes from COVID-19 infection were individuals suffering with Sickle
+Cell Disease. We wrote a commentary piece to draw attention to this
+group of individuals who are more prevalent in sub-Saharan countries in
+Africa that also suffer from a further burden of often under-developed
+healthcare infrastructure <span class="citation"
+data-cites="dexter_mitigating_2020">(<a
+href="#ref-dexter_mitigating_2020" role="doc-biblioref">Dexter et al.
+2020</a>)</span></p>
+<p>Along with colleagues from the PANDORA network we tried to identify
+the countries that could be at greatest risk of importation of cases
+early in the epidemic based off flight data <span class="citation"
+data-cites="haider_passengers_2020">(<a
+href="#ref-haider_passengers_2020" role="doc-biblioref">Haider et al.
+2020</a>)</span></p>
+<h2 id="omicron-response-work">Omicron response work</h2>
+<h3 id="vaccine-effectiveness">Vaccine effectiveness</h3>
+<p>Following the emergence and rapid spread of the Omicron (B.1.1.529)
+variant of SARS-CoV-2 there was substantial interest in the
+effectiveness of current vaccines. A test-negative case-control design
+was used to estimate vaccine effectiveness against symptomatic disease
+compared to the previously circulating Delta (B.1.617.2) variant. We
+observed that primary vaccination with ChAdOx1 nCoV-19 or BNT162b2
+vaccine provided limited protection against symptomatic disease. Booster
+vaccination following a completed primary course increased protection,
+but protection waned over time <span class="citation"
+data-cites="andrews2022covid">(<a href="#ref-andrews2022covid"
+role="doc-biblioref">Andrews et al. 2022</a>)</span>. This work has been
+published in the <a href="https://doi.org/10.1056/nejmoa2119451">New
+England Journal of Medicine</a></p>
+<h3 id="variant-detection">Variant detection</h3>
+<p>Within UKHSA we were fortunate that we could monitor the emergence of
+Omicron against the background of the prior Delta wave. This was
+possible as many of the laboratories conducting surveillance were able
+to detect S-gene target failure allowing differentiation between Omicron
+and Delta. This led to rapid identification of possible Omicron cases,
+alongside real-time surveillance and modelling of Omicron growth. This
+was key to initial public health action (including case identification
+and incident management), and we share applied insights on how and when
+these surveillance approaches can inform public health
+interventions<span class="citation"
+data-cites="blomquist2022enhancing">(<a
+href="#ref-blomquist2022enhancing" role="doc-biblioref">Blomquist et al.
+2022</a>)</span>. This work has been published in <a
+href="https://doi.org/10.2807/1560-7917.es.2022.27.11.2200143"><em>Eurosurveillance</em></a>.</p>
+<h3 id="comparing-transmission-of-omicron-and-delta">Comparing
+transmission of Omicron and Delta</h3>
+<p>This epidemiological study assessed differences in transmissibility
+between the Omicron and Delta. We used contact tracing data alongside
+national surveillance to estimate the transmission parameters. We found
+that the proportion of index cases resulting in a cluster of
+transmission was twice as high for Omicron (16.1%) compared to Delta
+(7.3%). Our study identified increased risk of onward transmission of
+Omicron, consistent with its successful global displacement of Delta
+<span class="citation" data-cites="allen2022comparative">(<a
+href="#ref-allen2022comparative" role="doc-biblioref">Allen et al.
+2022</a>)</span>. This work is currently registered as a pre-print on <a
+href="https://doi.org/10.1101/2022.02.15.22271001">MedRxiv</a></p>
+<h3 id="the-use-of-clinical-assessment-tools-in-uk-hospitals">The use of
+clinical assessment tools in UK hospitals</h3>
+<p>In my clinical role I was involved in a large scale audit of the use
+of the 4C COVID mortality score. The 4C Mortality Score (4C Score) was
+designed to risk stratify hospitalised patients with COVID-19. We
+assessed the inclusion of this score in COVID-19 management guidance and
+its documentation in patients’ case notes in January 2021 in UK
+hospitals. We found that score documentation in case notes was highly
+variable. Higher documentation of 4C Score was associated with score
+integration within admissions proformas, inclusion of 4C Score variables
+or link to online calculator, and management decisions. Integration of
+4C Score within clinical pathways may encourage more widespread use
+<span class="citation" data-cites="blunsum2021evaluation">(<a
+href="#ref-blunsum2021evaluation" role="doc-biblioref">Blunsum et al.
+2021</a>)</span>. This work is currently registered as a pre-print on <a
+href="https://doi.org/10.1101/2021.12.18.21268003">MedRxiv</a></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-allen2022comparative" class="csl-entry"
+role="doc-biblioentry">
+Allen, Hester, Elise Tessier, Charlie Turner, Charlotte Anderson, Paula
+Blomquist, David Simons, Alessandra Lochen, et al. 2022.
+<span>“Comparative Transmission of SARS-CoV-2 Omicron (b. 1.1. 529) and
+Delta (b. 1.617. 2) Variants and the Impact of Vaccination: National
+Cohort Study, England.”</span> <em>MedRxiv</em>.
 </div>
-<div id="ref-haider_passengers_2020" class="csl-entry" role="doc-biblioentry">
-Haider, Najmul, Alexei Yavlinsky, David Simons, Abdinasir Yusuf Osman, Francine Ntoumi, Alimuddin Zumla, and Richard Kock. 2020. <span>“Passengers’ Destinations from <span>China</span>: Low Risk of <span>Novel</span> <span>Coronavirus</span> (2019-<span class="nocase">nCoV</span>) Transmission into <span>Africa</span> and <span>South</span> <span>America</span>.”</span> <em>Epidemiology &amp; Infection</em> 148. <a href="https://doi.org/10.1017/S0950268820000424">https://doi.org/10.1017/S0950268820000424</a>.
+<div id="ref-andrews2022covid" class="csl-entry" role="doc-biblioentry">
+Andrews, Nick, Julia Stowe, Freja Kirsebom, Samuel Toffa, Tim Rickeard,
+Eileen Gallagher, Charlotte Gower, et al. 2022. <span>“Covid-19 Vaccine
+Effectiveness Against the Omicron (b. 1.1. 529) Variant.”</span> <em>New
+England Journal of Medicine</em> 386 (16): 1532–46.
+</div>
+<div id="ref-blomquist2022enhancing" class="csl-entry"
+role="doc-biblioentry">
+Blomquist, Paula B, Jessica Bridgen, Neil Bray, Anne Marie O’Connell,
+Daniel West, Natalie Groves, Eileen Gallagher, et al. 2022.
+<span>“Enhancing Epidemiological Surveillance of the Emergence of the
+SARS-CoV-2 Omicron Variant Using Spike Gene Target Failure Data,
+England, 15 November to 31 December 2021.”</span>
+<em>Eurosurveillance</em> 27 (11): 2200143.
+</div>
+<div id="ref-blunsum2021evaluation" class="csl-entry"
+role="doc-biblioentry">
+Blunsum, Andrew E, Jonathan S Perkins, Areeb Arshad, Sukrit Bajpai,
+Karen Barclay-Elliott, Sanjita Brito-Mutunayagam, Rebecca Brooks, et al.
+2021. <span>“Evaluation of the Implementation of the 4c Mortality Score
+in United Kingdom Hospitals During the Second Pandemic Wave.”</span>
+<em>medRxiv</em>.
+</div>
+<div id="ref-dexter_mitigating_2020" class="csl-entry"
+role="doc-biblioentry">
+Dexter, Daniel, David Simons, Charles Kiyaga, Nathan Kapata, Francine
+Ntoumi, Richard Kock, and Alimuddin Zumla. 2020. <span>“Mitigating the
+Effect of the <span>COVID</span>-19 Pandemic on Sickle Cell Disease
+Services in <span>African</span> Countries.”</span> <em>The Lancet
+Haematology</em> 7 (6): e430–32. <a
+href="https://doi.org/10.1016/S2352-3026(20)30122-8">https://doi.org/10.1016/S2352-3026(20)30122-8</a>.
+</div>
+<div id="ref-haider_passengers_2020" class="csl-entry"
+role="doc-biblioentry">
+Haider, Najmul, Alexei Yavlinsky, David Simons, Abdinasir Yusuf Osman,
+Francine Ntoumi, Alimuddin Zumla, and Richard Kock. 2020.
+<span>“Passengers’ Destinations from <span>China</span>: Low Risk of
+<span>Novel</span> <span>Coronavirus</span> (2019-<span
+class="nocase">nCoV</span>) Transmission into <span>Africa</span> and
+<span>South</span> <span>America</span>.”</span> <em>Epidemiology &amp;
+Infection</em> 148. <a
+href="https://doi.org/10.1017/S0950268820000424">https://doi.org/10.1017/S0950268820000424</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
