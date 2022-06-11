@@ -7,6 +7,12 @@ date: June 09, 2022
 output:
     distill::distill_article:
       toc: true
+bibliography: website_refs.bib
+categories:
+    - "Monkeypox"
+    - "One health"
+    - "Epidemiology"
+    - "Zoonoses"
 ---
 
 I  have been involved in two recently published pieces of work. The first, investigating Monkeypox community transmission following introduction into the UK identified as three separate incidents.
