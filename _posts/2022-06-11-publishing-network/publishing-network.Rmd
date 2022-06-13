@@ -1,0 +1,169 @@
+---
+title: "My co-author network"
+description: |
+  I was interested in seeing how I could visualise my co-authors within a network. This post begins that process documents how I went about it.
+author:
+  - name: David Simons
+    url: https://www.dsimons.org/about.html
+    affiliation: The Royal Veterinary College, London, UK
+    affiliation_url: https://www.rvc.ac.uk
+    orcid_id: 0000-0001-9655-1656
+date: 2022-06-11
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: true
+    toc: true
+    toc_depth: 2
+categories:
+    - "Miscellaneous"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "##",
+  R.options = list(width = 60)
+)
+library(igraph)
+library(rcrossref)
+library(rorcid)
+library(here)
+library(bib2df)
+library(ggraph)
+library(sf)
+library(tidyverse)
+```
+
+# Motivation
+
+As the range of topics that I've been working on continues to expand I thought it would be interesting to look at my network of collaborators. I use similar network approaches to understand transmission networks for viruses and potential contact rates between rodents of different species.
+
+# Data preparation
+
+I obtained a bibtex file for all of the publications that are listed on my ORCID profile <https://orcid.org/0000-0001-9655-1656>. These are stored as `orcid_works.bib`, a package available in R `orcidr` may be able to automate this step <https://docs.ropensci.org/rorcid/>. The file from ORCID was imported into Zotero and then exported as bibtex to standardise the formatting of journal titles etc.
+
+The downloaded Bibtex file contains several duplicates and authors are stored as a single string so needs some pre-processing before producing the network graph.
+
+```{r obtain-citations, include = FALSE, echo = FALSE}
+# res <- orcid_citations(orcid = "0000-0001-9655-1656", cr_format = "bibtex", cr_style = "ucl-university-college-harvard")
+
+# Read in bibtex file
+refs <- bib2df(file = here("_posts", "2022-06-11-publishing-network", "orcid_works.bib")) %>%
+  filter(str_detect(AUTHOR, "(?i)Simons")) # Remove publications that I am only associated with due to group authorship
+
+# Authors are stored as a list in the AUTHORS variable
+# The for loop unlists these and produces a list of authors for each article
+authors <- list()
+
+for(i in 1:nrow(refs)) {
+  
+  authors[[i]] <- tibble(AUTHOR = unlist(refs$AUTHOR[[i]]))
+  
+}
+
+# The titles are then associated with each author
+names(authors) <- refs$TITLE
+authors <- bind_rows(authors, .id = "TITLE")
+
+# The edgelist will need each author associated with an article so we join the data from the bibtex to the author title df
+cleaned_refs <- authors %>%
+  left_join(refs %>%
+              select(BIBTEXKEY, TITLE, JOURNAL, TITLE, YEAR, URL, DOI),
+            by = "TITLE") %>%
+  mutate(AUTHOR = case_when(str_detect(AUTHOR, "(?i)centre|center|CMMID") ~ "CMMID COVID-19 Working Group",
+                            str_detect(AUTHOR, "^and,") ~ str_remove_all(AUTHOR, "and,"),
+                            TRUE ~ AUTHOR), # There is inconsistent labelling of the working group and the addition of and before the last author. This fixes that
+         AUTHOR = str_trim(AUTHOR),
+         TITLE = str_remove_all(TITLE, "[{}]")) %>%
+  separate(AUTHOR, into = c("AUTHOR_SURNAME", "AUTHOR_FORENAME"), sep = ",") %>%
+  mutate(AUTHOR_ID = case_when(!is.na(AUTHOR_FORENAME) ~ paste0(AUTHOR_SURNAME, "_", str_trim(str_sub(AUTHOR_FORENAME, start = 1, end = 2))),
+                               TRUE ~ AUTHOR_SURNAME)) # Authors use different number of initials to identify themselves. I will include their preferred choice but to produce Nodes and Edges I need to use a standard approach so I will produce an ID from their surname and first initial
+```
+
+This produces a dataframe called `cleaned_refs` which we can use to produce a nodelist and an edgelist. A single node will be produced for each author. The connection between nodes are edges. An edge will be produced for a link between two nodes, I will aggregate these and produce a weight for the edges based on the number of publications that links these nodes. The network will be undirected, as there is no importance of the direction of the connection between two authors.
+
+```{r nodelist}
+
+nodes <- cleaned_refs %>%
+  group_by(AUTHOR_ID) %>%
+  summarise(N = n()) %>%
+  mutate(label = case_when(N >= 3 ~ str_replace(AUTHOR_ID, "_", ", "),
+                           TRUE ~ as.character(NA)))
+
+head(nodes, 5)
+```
+
+Each author I am linked to in a publication is represented by a node in this dataframe.
+
+```{r edgelist}
+
+edgelist_paper <- cleaned_refs %>%
+  group_by(TITLE) %>%
+  group_split() # Split the references based on the title
+
+# The following takes each publication and produces every possible combination between authors.
+# We will reduce this within the network later.
+edgelist <- lapply(edgelist_paper, function(x) {
+  
+  TITLE = unique(x$TITLE)
+  ORIGIN = unique(x$AUTHOR_ID)
+  DESTINATION = unique(x$AUTHOR_ID)
+  
+  edges <- crossing(ORIGIN, DESTINATION)
+  
+  edgelist <- tibble(TITLE = rep(TITLE, times = nrow(edges))) %>%
+    bind_cols(edges)
+    
+})
+
+edgelist <- bind_rows(edgelist) %>%
+  filter(ORIGIN != DESTINATION) %>% # Remove self links
+  group_by(ORIGIN, DESTINATION) %>%
+  summarise(NLINKS = n()) %>% # Calculate the number of publications linking the authors
+  arrange(-NLINKS) %>%
+  distinct() 
+
+head(edgelist, 5)
+
+```
+
+This dataframe contains a link between each co-author for all of the publications. The `NLINKS` variable represents the number of links (publications) between these authors. Currently this edge list is bidirectional (i.e. Perski_O -> Simons_D and Simons_D -> Perski_O). This will be reduced by specifying a non-directed graph to `igraph` in the next step.
+
+# Produce the graph
+
+This is a very simple step now that we have cleaned the data and produced our nodelist and edgelist. I will include only a single variable (NLINKS) that will be an attribute of the graph. However, in other work I tend to include multiple as this allows further understanding of the network based on properties of the links (i.e. having Sex as an attribute when investigating Monkeypox transmission). 
+
+```{r produce-graph}
+
+cit_graph <- graph_from_data_frame(edgelist, vertices = nodes, directed = FALSE) %>%
+  igraph::simplify(remove.multiple = TRUE, edge.attr.comb = "median")
+
+# Produce clustering for the nodes to colour them
+V(cit_graph)$cluster <- as.character(membership(cluster_louvain(cit_graph)))
+```
+
+The produced graph contains 151 nodes (authors), among whom there are 1,988 unique links through the 31 publications. 
+
+# Visualise the network
+
+Here the network is produced as a concentric graph with me at the centre (ego format). The edge colour represents the number of publications linking authors. This is heavily skewed for me by the 12 versions of the living review of the association between smoking and COVID-19. The colour of a node represents which cluster it is in, based on [Louvain classification](https://arxiv.org/abs/0803.0476).
+
+```{r visualise-graph, layout = "l-body-outset", fig.width = 7, fig.height = 6}
+
+graph <- ggraph(cit_graph, layout = "centrality", cent = graph.strength(cit_graph)) +
+  geom_edge_link0(aes(colour = NLINKS)) +
+  scale_edge_colour_distiller(type = "seq", palette = 1, direction = 1, guide = "edge_colourbar") +
+  geom_node_point(shape = 21, aes(fill = cluster), show.legend = FALSE) + 
+  geom_node_text(aes(filter = N >= 3, label = label), repel = TRUE, size = 2.5) +
+  scale_fill_manual(values = RColorBrewer::brewer.pal(n = length(unique(V(cit_graph)$cluster)), name = "Dark2")) +
+  theme_graph(base_family = "sans") +
+  coord_fixed() +
+  guides(edge_colour = guide_edge_colourbar(title =  "Number of publications")) +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+
+graph
+
+```

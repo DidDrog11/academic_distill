@@ -9,8 +9,11 @@ listing:
     - 2021-04-06-luciferase-immunoprecipitations-system
     - trapping_visits
     - scoping-review
+    - 2022-06-09-interactive-rodent-trapping
+    - 2022-06-11-publishing-network
 categories:
     - lassa
     - covid
     - amr
+    - miscellaneous
 ---
